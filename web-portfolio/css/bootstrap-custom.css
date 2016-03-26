@@ -1,0 +1,14 @@
+.navbar-inverse {
+    background-color: black;
+}
+
+/*Improve specificity*/
+.navbar-logo  {
+    max-height: 100px;
+}
+
+.carosuel-inner {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+}

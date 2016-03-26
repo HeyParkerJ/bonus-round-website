@@ -1,0 +1,21 @@
+body, html{
+	margin:0px;
+	padding:0px;
+	font-family: Arial, Helvetica, sans-serif;
+	height: 100%;
+	background-color: #fff
+}
+
+h1, h2, h3, h4, h5, h6, p, a {
+	text-shadow: 0px 0px 0px rgba(0,0,0,1);
+}
+
+* {
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+.light-header {
+	margin: 10px;
+}
