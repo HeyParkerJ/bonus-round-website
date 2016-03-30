@@ -1,5 +1,19 @@
 .navbar-inverse {
-    background-color: black;
+    background-color: #3b3838;
+}
+
+.navbar-inverse .navbar-nav > .active > a, 
+.navbar-inverse .navbar-nav > .active > a:hover, 
+.navbar-inverse .navbar-nav > .active > a:focus {
+    background-color: #3b3838;
+}
+
+.navbar-inverse .navbar-nav > li > a {
+    color: #d4b12b;
+}
+
+.navbar {
+    margin-bottom: 0;
 }
 
 /*Improve specificity*/
@@ -7,8 +21,26 @@
     max-height: 100px;
 }
 
-.carosuel-inner {
-    position: relative;
-    width: 100%;
-    overflow: hidden;
+.navbar-nav > li > a {
+ line-height: 100px;
+}
+
+.col-centered{
+    float: none;
+    margin: 0 auto;
+}
+
+header {
+    background-image: url("../img/comingApril.png");
+    /*background-repeat: none;*/
+    background-attachment: scroll;
+    background-position: center center;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;
+    -o-background-size: cover;
+    text-align: center;
+    color: white;
+    min-height: 80vh;
+    min-width: 100%;
 }

@@ -16,6 +16,14 @@ h1, h2, h3, h4, h5, h6, p, a {
 	box-sizing: border-box;
 }
 
-.light-header {
-	margin: 10px;
+.construction-text .construction-lead-in {
+	font-size: 20px;
+	color: #d4b12b;
+	background-color: black;
+	opacity: 0.8;
+    filter: alpha(opacity=80); /* For IE8 and earlier */
+}
+
+.construction-text a:hover {
+	text-decoration: none;
 }
