@@ -1,0 +1,13 @@
+- Make navbar/hamburger responsive
+- Navbar resize and follow on scroll
+-- Logo resize
+-- Highlight active navbar element
+- Make font more readable
+- Social buttons
+- Location/Hours/Contact Us
+- Map functionality
+- Figure out how to cleanly add images
+
+BUGS
+
+Contruction progress bar stretches past navbar
