@@ -22,6 +22,33 @@
 }
 
 .navbar-nav > li > a {
+/*This is a crude way vertically center text, it will bite you in the ass later
+    P: How will it bite me? 
+    A: If that text wraps onto two lines, you will have a massive space in between the text
+    P: But they are small, it will never word wrap.
+    A: Have you checked your mobile layout?
+
+    Alternate methods
+      Old personal favorite 
+      Increase top and bottom padding to match big elements, will still have word wrap issue, but only on a per element basis
+        - this works when you can guarantee no word wrapping.
+
+      New favorite  - You'll have to figure it out, but this is a good starting place
+      .navbar-nav{
+        display: flex;
+        align-items: center;
+      }
+
+      Notes about height spacing
+        A: Let the logo be max-height: 100%; and set the fixed height on a containing element 
+        P: why?
+        A: If using ems or rems, the max height will keep logo in it's space without breaking layout 
+           will also adjust dynamically to container size (mobile friendlier)
+
+      Also
+      media queries
+      A: Probably will need this regardless of method, big when desktop, small when mobile. 
+  */
  line-height: 100px;
 }
 
