@@ -15,9 +15,17 @@ h1, h2 {
 h3 {
 	font-weight: 500;
 }
-
-h1, h2, h3, h4 {
+h4 {
+	padding-top: 4%;
 	color: #d4b12b;
+}
+h1, h2, h3 {
+	color: #d4b12b;
+}
+.content-header > h1, 
+.content-header > h2, 
+.content-header > h3 {
+	padding-bottom: 2%;
 }
 
 * {
@@ -26,14 +34,54 @@ h1, h2, h3, h4 {
 	box-sizing: border-box;
 }
 
+ul > li {
+	list-style: none;
+}
+
 .construction-text .construction-lead-in {
 	font-size: 20px;
 	color: #d4b12b;
 	background-color: black;
 	opacity: 0.8;
     filter: alpha(opacity=80); /* For IE8 and earlier */
+    max-width: 100%;
 }
 
 .construction-text a:hover {
 	text-decoration: none;
 }
+
+.menu-text{
+	color: #f8f6f6;
+	font-family: "brandon-grotesque";
+	font-size: 16px;
+	line-height: 1.8em;
+	font-weight: 100;
+	font-style: normal;
+	letter-spacing: .015em;
+}
+
+.games-text{
+	font-size: 20px;
+}
+
+.aboutus-text {
+	color: #f8f6f6;
+	line-height: 2em;
+}
+
+.content-block {
+	padding-top: 5%;
+	padding-bottom: 5%;
+}
+
+.col-centered {
+	float: none;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.games-text > ul > li {
+	font: 20px;
+}
+

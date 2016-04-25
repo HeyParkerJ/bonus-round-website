@@ -1,5 +1,5 @@
-- Make navbar/hamburger responsive
-- Navbar resize and follow on scroll
+*****- Make navbar/hamburger responsive*****
+- Navbar resize and follow on scroll - switch to navbar-fixed-top and use js to switch classes
 -- Logo resize
 -- Highlight active navbar element
 - Make font more readable
