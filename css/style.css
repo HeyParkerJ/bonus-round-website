@@ -51,6 +51,16 @@ ul > li {
 	text-decoration: none;
 }
 
+.splash-image {
+	max-height: 100%;
+	max-width: 100%;
+}
+
+.embedded-video, iframe, object, embed {
+	max-height: 100%;
+	max-width: 100%;
+}
+
 .menu-text{
 	color: #f8f6f6;
 	font-family: "brandon-grotesque";
@@ -85,3 +95,12 @@ ul > li {
 	font: 20px;
 }
 
+		/*miller - verb first modifiers after*/
+		/*Block  - element - modifier 
+		nav 		link 		blue */
+		/*when width is > 768px these styles will apply*/
+@media (min-width:768px) { 
+	.navbar-nav .nav-link { 
+		padding: 50px 20px;
+	}
+}
