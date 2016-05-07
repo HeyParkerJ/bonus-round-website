@@ -95,6 +95,17 @@ ul > li {
 	font: 20px;
 }
 
+@font-face {
+    font-family: 'simson';
+    src: url(../fonts/simson.tff);
+}
+
+.bonus-round-logo-text {
+	font-family: simson;
+	font: 50px;
+	color: #d4b12b;
+}
+
 		/*miller - verb first modifiers after*/
 		/*Block  - element - modifier 
 		nav 		link 		blue */
