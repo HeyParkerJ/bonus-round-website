@@ -1,9 +1,13 @@
 body, html{
-	margin:0px;
+	margin: 0px;
 	padding:0px;
 	font-family: Arial, Helvetica, sans-serif;
 	height: 100%;
 	background-color: #6b6b6b;
+}
+
+body {
+	margin: 130px 0px 0px 0px;
 }
 
 h1, h2, h3, h4, h5, h6, p, a {
@@ -14,10 +18,12 @@ h1, h2 {
 }
 h3 {
 	font-weight: 500;
+	font-size: 30px;
 }
 h4 {
 	padding-top: 4%;
 	color: #d4b12b;
+	font-size: 20px;
 }
 h1, h2, h3 {
 	color: #d4b12b;
@@ -64,15 +70,11 @@ ul > li {
 .menu-text{
 	color: #f8f6f6;
 	font-family: "brandon-grotesque";
-	font-size: 16px;
+	font-size: 20px;
 	line-height: 1.8em;
 	font-weight: 100;
 	font-style: normal;
 	letter-spacing: .015em;
-}
-
-.games-text{
-	font-size: 20px;
 }
 
 .aboutus-text {
@@ -81,8 +83,8 @@ ul > li {
 }
 
 .content-block {
-	padding-top: 5%;
-	padding-bottom: 5%;
+	padding-top: 2%;
+	padding-bottom: 2%;
 }
 
 .col-centered {
@@ -95,15 +97,35 @@ ul > li {
 	font: 20px;
 }
 
+.anchor {
+	position: relative;
+	display: block;
+	top: -160px;
+}
+
+.zebra-stripe {
+	background: #606060;
+}
+
+.splash-background {
+	background: #3b3838;
+}
+
 @font-face {
     font-family: 'simson';
     src: url(../fonts/simson.tff);
 }
 
-.bonus-round-logo-text {
+.mobile-brand {
 	font-family: simson;
-	font: 50px;
+	font: 20px;
 	color: #d4b12b;
+	height: 20px;
+	width: 20px;
+}
+
+.shrink {
+		padding: 50px 20px;
 }
 
 		/*miller - verb first modifiers after*/
@@ -113,5 +135,15 @@ ul > li {
 @media (min-width:768px) { 
 	.navbar-nav .nav-link { 
 		padding: 50px 20px;
+	}
+}
+
+@media (max-width:768px) {
+	.anchor {
+		top: -80px;
+	}
+	
+	body {
+		margin: 60px 0px 0px 0px;
 	}
 }

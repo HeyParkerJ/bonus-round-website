@@ -16,19 +16,14 @@
     
     <main role="main">
     <body>
-        <!--
-        Reponsive Navbar Brand links
-        http://stackoverflow.com/questions/23700941/bootstrap-full-responsive-navbar-with-logo-or-brand-name-text
-        http://jsfiddle.net/paulalexandru/GMjF6/?utm_source=website&utm_medium=embed&utm_campaign=GMjF6
-        -->
-        <nav class="navbar nav navbar-inverse navbar-static-top" role="navigation"> <!-- use JS to flip to navbar-fixed-top -->
+        <nav class="navbar nav navbar-inverse navbar-fixed-top" role="navigation"> <!-- use JS to flip to navbar-fixed-top -->
             <div class="container"> <!-- over container-flud because we want nav edges indented (not full width) -->
                 <div class="navbar-header">
                     <div class="navbar-brand hidden-xs">
                         <a href="index.html" class="pull-left"><img src="img/brlogo.png" class="navbar-logo"></a> 
                     </div>
                     <div class="navbar-brand visible-xs">
-                        <a href="index.html" class="pull-left"><img src="img/BRMAX.jpg" class="navbar-logo"></a>
+                        <a href="index.html" class="pull-left"><img src="img/BR-plain.jpg" class="navbar-logo"></a>
                     </div>
                     <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" 
                         data-target="#navbar-collapse" aria-expanded="false">
@@ -40,18 +35,27 @@
                 </div> <!-- .navbar-header-->
                 <div class="collapse navbar-collapse navbar-right" id="navbar-collapse">
                         <ul class="nav navbar-nav">
-                            <li class="active"><a class="nav-link page-scroll" href="/about">Home</a></li>
-                            <li><a class="nav-link page-scroll" href="#">Games</a></li>
-                            <li><a class="nav-link page-scroll" href="#">Food</a></li>
-                            <li><a class="nav-link page-scroll" href="#">Drinks</a></li>
-                            <li><a class="nav-link page-scroll" href="#">About Us</a></li>
+                            <li class="active"><a href="#home" class="hidden-xs nav-link">Home</a></li>
+                            <li class="active"><a href="#home" class="visible-xs nav-link" data-toggle="collapse" data-target=".navbar-collapse">Home</a></li>
+                            
+                            <li><a href="#games-anchor" class="hidden-xs nav-link">Games</a></li>
+                            <li><a href="#games-anchor" class="visible-xs nav-link" data-toggle="collapse" data-target=".navbar-collapse">Games</a></li>
+                            
+                            <li><a href="#food-anchor" class="hidden-xs nav-link">Food</a></li>
+                            <li><a href="#food-anchor" class="visible-xs nav-link" data-toggle="collapse" data-target=".navbar-collapse">Food</a></li>
+                            
+                            <li><a href="#drinks-anchor" class="hidden-xs nav-link">Drinks</a></li>
+                            <li><a href="#drinks-anchor" class="visible-xs nav-link" data-toggle="collapse" data-target=".navbar-collapse">Drinks</a></li>
+                            
+                            <li><a href="#aboutus-anchor" class="hidden-xs nav-link">About Us</a></li>
+                            <li><a href="#aboutus-anchor" class="visible-xs nav-link" data-toggle="collapse" data-target=".navbar-collapse">About Us</a></li>
                         </ul>
                 </div> <!-- .collapse navbar-collapse -->
             </div> <!-- .container-fluid -->
         </nav> <!-- .my-navbar -->
         
         <header>
-            <div class="row row-centered">
+            <div class="row row-centered" id="home">
                 <div class="construction-text col-centered">
                     <a href="https://www.facebook.com/BonusRoundPhx"><div class="construction-lead-in">Follow us for updates!</div></a>
                 </div>
@@ -64,9 +68,9 @@
         <div class="content-block" id="games-content">
             <div class="container">
                 <div class="content-header col-centered">
-                    <h2>The BR Starting Lineup Of FREE Arcades!</h2>
+                    <h2><span id="games-anchor" class="anchor"></span>The BR Starting Lineup Of FREE Arcades!</h2>
                 </div>
-                <div class="row menu-text games-text">
+                <div class="row menu-text">
                     <div class="col-md-3">
                         <ul>
                             <li>Spy Hunter</li>
@@ -107,10 +111,10 @@
             </div> <!-- .container -->
         </div> <!-- .content-block #games-content -->
         
-        <div class="content-block" id="food-content">
+        <div class="content-block zebra-stripe" id="food-content">
             <div class="container">
                 <div class="content-header col-centered">
-                    <h2>Food</h2>
+                    <h2><span id="food-anchor" class="anchor"></span>Food</h2>
                 </div>
                 <div class="row menu-text">
                     <div class="col-md-3">
@@ -134,7 +138,7 @@
                     </div>
                     <div class="col-md-3">
                         <ul>
-                            <h3>Boss Battle</h3>    
+                            <h3>Boss Battles</h3>    
                             <h4>Sliders</h4>
                             
                             <li>BBQ Briskey</li>
@@ -170,7 +174,7 @@
         <div class="content-block" id="drinks-content">
             <div class="container">
                 <div class="content-header col-centered">
-                    <h2>Drinks</h2>
+                    <h2><span id="drinks-anchor" class="anchor"></span>Drinks</h2>
                 </div>
                 <div class="row menu-text">
                     <div class="col-md-6">
@@ -239,10 +243,10 @@
             </div> <!-- .container -->
         </div> <!-- .content-block #drinks-content -->
         
-        <div class="content-block" id="aboutus-content">
+        <div class="content-block zebra-stripe" id="aboutus-content">
             <div class="container">
                     <div class="content-header">
-                        <h2>About Us</h2>
+                        <h2><span id="aboutus-anchor" class="anchor"></span>About Us</h2>
                     </div>
                 <div class="col-md-6">
                     <div class="row aboutus-text">
@@ -259,7 +263,8 @@
             &copy; 2016 - Bonus Round
         </footer>
         <!-- script -->
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
-        <script src="js/bootstrap.min.js"></script>
+        <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+        <script type="text/javascript" src="js/bootstrap.min.js"></script>
+        <script type="text/javascript" src="js/scripts.js"></script>
     </body>
 </html>

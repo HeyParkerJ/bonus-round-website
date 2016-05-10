@@ -1,18 +1,10 @@
-*****- Make navbar/hamburger responsive*****
-- Navbar resize and follow on scroll - switch to navbar-fixed-top and use js to switch classes
--- Logo resize
+- Navbar resize when not at top of page
 -- Highlight active navbar element
-- Make font more readable
 - Social buttons
 - Location/Hours/Contact Us
 - Map functionality
-- Figure out how to cleanly add images
 
 BUGS
-
-- Contruction progress bar stretches past navbar
-- Whitespace isn't quite optimal compared to squarespace site
-
 
 
 Wishlist
