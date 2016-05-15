@@ -111,9 +111,8 @@ ul > li {
 	background: #3b3838;
 }
 
-@font-face {
-    font-family: 'simson';
-    src: url(../fonts/simson.tff);
+.social-icons {
+	height: 100px;
 }
 
 .mobile-brand {
