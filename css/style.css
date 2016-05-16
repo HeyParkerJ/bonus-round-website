@@ -127,6 +127,10 @@ ul > li {
 		padding: 50px 20px;
 }
 
+#map {
+	height: 50vh;
+}
+
 		/*miller - verb first modifiers after*/
 		/*Block  - element - modifier 
 		nav 		link 		blue */

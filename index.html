@@ -61,7 +61,7 @@
                 </div>
             </div> <!-- .container -->
             <div>
-                <img class="splash-image" src="img/openingSoon.png"></img>
+                <img class="splash-image" src="img/bonus-round-bar-bw-min.jpg"></img>
             </div>
         </header>
         
@@ -264,17 +264,24 @@
                 <iframe class="embedded-video" src="https://www.youtube.com/embed/1Cj0G1SD6e0" frameborder="0" allowfullscreen></iframe>
                 <div id="map">
                    <script>
+                   var latLng = {lat: 33.509740, lng: -112.075713};
                    var map;
                     function initMap() {
                         map = new google.maps.Map(document.getElementById('map'), {
-                            center: {lat: 33.50926, lng: -112.0753108},
-                            zoom: 8
+                            center: latLng,
+                            zoom: 14
+                        });
+                        
+                    var marker = new google.maps.Marker({
+                            position: latLng,
+                            map: map,
+                            title: 'Bonus Round!'
                         });
                     }
                 
                    </script>
                    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCaHyPHt9JTgJHpvKrhgJkwDfU6i9tMa88&callback=initMap"async defer></script>
-                </div> <!-- .map -->
+                </div> <!-- #map -->
             </div> <!-- .container -->
         </div> <!-- .content-block aboutus-content-->
         
