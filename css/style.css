@@ -16,15 +16,22 @@ h1, h2, h3, h4, h5, h6, p, a {
 h1, h2 {
 	font-weight: 600;
 }
-h3 {
+
+.menu-header-3 {
 	font-weight: 500;
 	font-size: 30px;
 }
-h4 {
+
+.menu-header-4 {
 	padding-top: 4%;
+	color: #d4b12b;
+	font-size: 20px;	
+}
+.about-header-4 {
 	color: #d4b12b;
 	font-size: 20px;
 }
+
 h1, h2, h3 {
 	color: #d4b12b;
 }
@@ -114,6 +121,10 @@ ul > li {
 .icon-black {
 	color: black;
 	opacity: 0.8;
+}
+
+.info {
+	color: white;
 }
 
 .mobile-brand {
