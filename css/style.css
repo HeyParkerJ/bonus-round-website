@@ -62,11 +62,6 @@ ul > li {
 	max-width: 100%;
 }
 
-.embedded-video, iframe, object, embed {
-	max-height: 100%;
-	max-width: 100%;
-}
-
 .menu-text{
 	color: #f8f6f6;
 	font-family: "brandon-grotesque";
@@ -113,6 +108,12 @@ ul > li {
 
 .social-icons {
 	height: 100px;
+	opacity: 0.8;
+}
+
+.icon-black {
+	color: black;
+	opacity: 0.8;
 }
 
 .mobile-brand {
@@ -126,6 +127,7 @@ ul > li {
 .shrink {
 		padding: 50px 20px;
 }
+
 
 #map {
 	height: 50vh;
