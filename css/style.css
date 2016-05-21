@@ -135,6 +135,12 @@ ul > li {
 	width: 20px;
 }
 
+.navbar-brand-mobile {
+	max-height: 50px;
+	max-width: 50px;
+	margin: 15px 0px 0px 10px;
+}
+
 .shrink {
 		padding: 50px 20px;
 }
