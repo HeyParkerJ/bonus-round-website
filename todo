@@ -1,6 +1,20 @@
 -favicon
-BUGS
 
-Wishlist
+TODO: {
+	BUGS: {
+		Lists are indented to the right more than they should be
+	}
+}
 
-- Make food/drinks/games content easier for BR to manage
+given a list of items, divide the toal number by 4 columns. The resulting number is the amount of items to put in each column. The remainder (which will be less than 4) is placed in the first, second, then third column as needed.
+
+Problem: last three items on the list will be 'out of order' becuase the previous columns are already filled.
+Solution: 
+	items / 4 = columnSize
+
+	for remainder
+
+
+given 50 items
+
+50 / 4 = 12
