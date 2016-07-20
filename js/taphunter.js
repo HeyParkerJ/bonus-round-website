@@ -10,7 +10,7 @@ var $jsonp = (function(){
     var timeout_trigger = window.setTimeout(function(){
       window[callback_name] = function(){};
       on_timeout();
-    }, timeout * 1000);
+    }, timeout * 5000);
 
     window[callback_name] = function(data){
       window.clearTimeout(timeout_trigger);
@@ -29,7 +29,10 @@ var $jsonp = (function(){
 })(); 
 
 function populatePage(json) {
+	// START HERE -- This doesn't hit because we outofindexarray way below on the previous calls
+	outputSubMenu('taps', json.taps)
 	outputSubMenu('bottles', json.bottles)
+	outputWineSubMenu(json.wines)
 };
 
 function outputSubMenu(drinkType, drinkList){
@@ -41,15 +44,12 @@ function outputSubMenu(drinkType, drinkList){
 	var itemsPerColumn = Math.floor(drinkList.length / columnsNeeded);
 	var remainder = drinkList.length % columnsNeeded
 
-	for (var columnNumber = 0; columnNumber < columnsNeeded; columnNumber++){ //for every column we need
-		console.log("STARTING NEW COLUMN. COLUMN NUMBER IS : " + columnNumber)
+	for (var columnNumber = 0; columnNumber <= columnsNeeded && nextItemToOutput < drinkList.length; columnNumber++){ //for every column
 		var itemsInThisColumn = itemsPerColumn;
 
 		if(remainder > 0) {
-			console.log("MODIFYING REMAINDER, OLD REMAINDER: "+remainder+" OLD itemsInThisColumn: "+itemsInThisColumn)
 			itemsInThisColumn++
 			remainder--
-			console.log("NEW itemsInThisColumn: "+itemsInThisColumn+" NEW remainder: "+remainder)
 		}
 
 		var div = document.getElementById(drinkType)
@@ -60,14 +60,26 @@ function outputSubMenu(drinkType, drinkList){
 		bootstrapDiv.insertAdjacentHTML('beforeend', outputUlElement(drinkType, columnNumber))
 
 
-		var ul = document.getElementById(drinkType+'-ul-'+columnNumber) // Grab the UL and start dropping li's in with the beer at value drinkList[nextItemToOutput]
+		var ul = document.getElementById(drinkType+'-ul-'+columnNumber)
 		
-		for (var j = 0; j <= itemsInThisColumn; j++){
-			console.log("ITEMS IN COLUMN " + columnNumber+ " : "+ itemsInThisColumn)
-			// CASE statement on drinkType where we grab beer.name or cocktail.name, etc
+		for (var j = 0; j < itemsInThisColumn && nextItemToOutput < drinkList.length; j++){
+
 			ul.insertAdjacentHTML('beforeend', outputLiElement(drinkList, nextItemToOutput))
 			nextItemToOutput++
-			//Items in this column is 12 not 13
+		}
+	}
+}
+
+function outputWineSubMenu(drinkList) {
+	var redWinesUl = document.getElementById('wines-red-ul')
+	var whiteWinesUl = document.getElementById('wines-white-ul')
+
+	for (var w = 0; w < drinkList.length; w++) {
+		if(drinkList[w].category_name == "Red") {
+			redWinesUl.insertAdjacentHTML('beforeend', '<li class="menu-item">'+drinkList[w].name+'</li>')
+		}
+		else if (drinkList[w].category_name == "White") {
+			whiteWinesUl.insertAdjacentHTML('beforeend', '<li class="menu-item">'+drinkList[w].name+'</li>')
 		}
 	}
 }
@@ -82,7 +94,7 @@ function outputUlElement(drinkType, columnNumber) {
 }
 
 function outputLiElement(drinkList, nextItemToOutput) {
-	return 'beforeend', '<li>'+drinkList[nextItemToOutput].beer.name+'</li>'
+	return 'beforeend', '<li class="menu-item">'+drinkList[nextItemToOutput].beer.name+'</li>'
 }
 
 //Please remove this before production, goofass
