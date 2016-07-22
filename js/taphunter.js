@@ -95,7 +95,18 @@ function outputUlElement(drinkType, columnNumber) {
 }
 
 function outputLiElement(drinkList, nextItemToOutput) {
-	return 'beforeend', '<li class="menu-item">'+drinkList[nextItemToOutput].beer.name+'</li>'
+	var beer = drinkList[nextItemToOutput].beer
+	var brewery = drinkList[nextItemToOutput].brewery
+	return 'beforeend', '<li class="menu-item">'
+	+beer.name+
+	" ("
+	+beer.abv+
+	"% / "
+	+beer.ibu+
+	" IBU"+
+	") - "
+	+brewery.state+
+	'</li>'
 }
 
 //Please remove this before production, goofass

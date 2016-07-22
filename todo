@@ -9,31 +9,22 @@ TODO:
 	FEATURES:
 
 	BUGS:
-		Lists are indented to the right more than they should be
 
 	WISHLIST:
+		Prettify spacing plz
+
+		References to "Bonus Round" use simson font
+			Problem doing this is that it looks bad
+			when using default import options
+
+		Carousel
+			Could use this as events display
+
+		Hover description for beers
 
 
 
-	BR Shit
-
-Cans & bottles => no extra detail
-Bottles => cans & bottles
 Drafts => Logo, abv, ibu, origin state of the brewery
-
-
-fonts: {
-   swap BONUS ROUND text w/ logo from jacob link
-}
-
-times: {
-	sunday-thurs: 4pm-midnight
-	fri-sat: 4pm-2am
-}
-
-wines: {
-	picture been took
-}
 
 events: {
 	FB event calendar tie-in
@@ -46,10 +37,5 @@ events: {
 happy hour: {
 	find condensed version - took pic
 }
-
-carousel: {
-	look into what makes a good carousel
-}
-
 
 https://www.dropbox.com/sh/ui41ut9nxvqsuoz/AACpNtFJ3mbezOhXuclTSFXUa?dl=0
