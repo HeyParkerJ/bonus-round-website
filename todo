@@ -4,6 +4,7 @@ TODO:
 		Polish code
 		Validate HTML
 		View on Mobile
+		Verify CSS changes weren't useless
 
 	FEATURES:
 
@@ -11,3 +12,44 @@ TODO:
 		Lists are indented to the right more than they should be
 
 	WISHLIST:
+
+
+
+	BR Shit
+
+Cans & bottles => no extra detail
+Bottles => cans & bottles
+Drafts => Logo, abv, ibu, origin state of the brewery
+
+
+fonts: {
+   swap BONUS ROUND text w/ logo from jacob link
+}
+
+times: {
+	sunday-thurs: 4pm-midnight
+	fri-sat: 4pm-2am
+}
+
+wines: {
+	picture been took
+}
+
+events: {
+	FB event calendar tie-in
+	idea: name reoccurring weeklies and link to Facebook for special events
+	thurs: 7pm, geeks who drink
+	sun: 7pm karoiki
+	wed: 8pm open mic
+}
+
+happy hour: {
+	find condensed version - took pic
+}
+
+carousel: {
+	look into what makes a good carousel
+}
+
+
+https://www.dropbox.com/sh/ui41ut9nxvqsuoz/AACpNtFJ3mbezOhXuclTSFXUa?dl=0

@@ -32,7 +32,6 @@ function populatePage(json) {
 	// START HERE -- This doesn't hit because we outofindexarray way below on the previous calls
 	outputSubMenu('taps', json.taps)
 	outputSubMenu('bottles', json.bottles)
-	outputWineSubMenu(json.wines)
 };
 
 function outputSubMenu(drinkType, drinkList){
@@ -70,6 +69,8 @@ function outputSubMenu(drinkType, drinkList){
 	}
 }
 
+/*
+Temporarily using a static wine list
 function outputWineSubMenu(drinkList) {
 	var redWinesUl = document.getElementById('wines-red-ul')
 	var whiteWinesUl = document.getElementById('wines-white-ul')
@@ -82,7 +83,7 @@ function outputWineSubMenu(drinkList) {
 			whiteWinesUl.insertAdjacentHTML('beforeend', '<li class="menu-item">'+drinkList[w].name+'</li>')
 		}
 	}
-}
+}*/
 
 
 function outputColumnDiv(drinkType, columnNumber) {
