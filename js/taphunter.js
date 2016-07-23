@@ -28,7 +28,7 @@ var $jsonp = (function(){
   return that;
 })(); 
 
-function populatePage(json) {g
+function populatePage(json) {
 	outputSubMenu('taps', json.taps)
 	outputSubMenu('bottles', json.bottles)
 };
@@ -36,6 +36,7 @@ function populatePage(json) {g
 function outputSubMenu(drinkType, drinkList){
 	var columnsNeeded = 4;
 	var nextItemToOutput = 0;
+	var lastUpdated = '';
 
 	if(drinkList.length < 8) { columnsNeeded = 1 };
 
@@ -68,9 +69,19 @@ function outputSubMenu(drinkType, drinkList){
 				ul.insertAdjacentHTML('beforeend', outputLiElement(drinkList, nextItemToOutput))
 			}
 			
+			if (drinkList[nextItemToOutput].date_added_timestamp > lastUpdated) {
+				lastUpdated = drinkList[nextItemToOutput].date_added_timestamp
+			}
+
 			nextItemToOutput++
 		}
 	}
+
+	var myDate = new Date(lastUpdated*1000);
+	var lastUpdatedDate = myDate.toLocaleString();
+
+	var lastUpdatedDiv = document.getElementById(drinkType+'-lastupdated')
+	lastUpdatedDiv.insertAdjacentHTML('beforeend',  '<div>Last updated on: <span class="gold">'+lastUpdatedDate+' MST</span></div>')
 }
 
 function outputColumnDiv(drinkType, columnNumber) {
@@ -120,7 +131,7 @@ function paintThatShitGold(state) {
 $jsonp.send('https://www.taphunter.com/widgets/location/v3/6729532695642112.jsonp?callback=handleCallback', {
     callbackName: 'handleCallback',
     onSuccess: function(json){
-    	console.log('successfully retrieved taphunter data!', json);
+    	//DEBUG - console.log('successfully retrieved taphunter data!', json);
     	data = json;
         populatePage(json);
     },
