@@ -62,8 +62,13 @@ function outputSubMenu(drinkType, drinkList){
 		var ul = document.getElementById(drinkType+'-ul-'+columnNumber)
 		
 		for (var j = 0; j < itemsInThisColumn && nextItemToOutput < drinkList.length; j++){
-
-			ul.insertAdjacentHTML('beforeend', outputLiElement(drinkList, nextItemToOutput))
+			if(drinkType === 'taps') {
+				ul.insertAdjacentHTML('beforeend', outputTapsLiElement(drinkList, nextItemToOutput))
+			}
+			else {
+				ul.insertAdjacentHTML('beforeend', outputLiElement(drinkList, nextItemToOutput))
+			}
+			
 			nextItemToOutput++
 		}
 	}
@@ -97,16 +102,37 @@ function outputUlElement(drinkType, columnNumber) {
 function outputLiElement(drinkList, nextItemToOutput) {
 	var beer = drinkList[nextItemToOutput].beer
 	var brewery = drinkList[nextItemToOutput].brewery
-	return 'beforeend', '<li class="menu-item">'
+	return 'beforeend', '<li class="menu-item"><strong>'
 	+beer.name+
+	'</strong><small>'
+	+" - "
+	+paintThatShitGold(brewery.state)+
+	'</small></li>'
+}
+
+function outputTapsLiElement(drinkList, nextItemToOutput) {
+	var beer = drinkList[nextItemToOutput].beer
+	var brewery = drinkList[nextItemToOutput].brewery
+	return 'beforeend', '<li class="menu-item"><strong>'
+	+beer.name+
+	'</strong></br><small>'+
 	" ("
 	+beer.abv+
 	"% / "
 	+beer.ibu+
 	" IBU"+
 	") - "
-	+brewery.state+
-	'</li>'
+	+paintThatShitGold(brewery.state)+
+	'</small></li>'
+}
+
+function paintThatShitGold(state) {
+	if (state === "AZ") {
+		return '<span class="gold">'+state+'</span>'
+	}
+	else {
+		return state;
+	}
 }
 
 //Please remove this before production, goofass

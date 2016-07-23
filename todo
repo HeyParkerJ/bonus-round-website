@@ -17,14 +17,10 @@ TODO:
 			Problem doing this is that it looks bad
 			when using default import options
 
-		Carousel
+		Events Tie In + Carousel
 			Could use this as events display
 
 		Hover description for beers
-
-
-
-Drafts => Logo, abv, ibu, origin state of the brewery
 
 events: {
 	FB event calendar tie-in

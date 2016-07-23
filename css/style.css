@@ -29,12 +29,6 @@ h1, h2 {
 	text-align: center;
 }
 
-.drink-name {
-	padding: 2%, 0, 2%, 0;
-	color: #d4b12b;
-	font-size: 20px;
-}
-
 .menu-header-4 {
 	padding: 2%, 0, 2%, 0;
 	color: #d4b12b;
@@ -46,8 +40,19 @@ h1, h2 {
 	font-size: 20px;
 }
 
-.menu-item {
+.drink-name {
+	padding: 2%, 0, 2%, 0;
+	color: #d4b12b;
+	font-size: 20px;
+}
 
+.padding-small {
+	padding-top: 2%;
+	padding-bottom: 2%;
+}
+
+.padding-small-bottom {
+	padding-bottom: 2%;
 }
 
 h1, h2, h3 {
@@ -87,16 +92,22 @@ ul > li {
 	max-width: 100%;
 }
 
-.menu-item {
-
-}
-
 .menu-text{
 	color: #f8f6f6;
 	font-family: 'Open Sans', sans-serif;
 	font-size: 16px;
 	line-height: 2em;
 	font-weight: 100;
+	font-style: normal;
+	letter-spacing: .015em;
+}
+
+.small-text{
+	color: #f8f6f6;
+	font-family: 'Open Sans', sans-serif;
+	font-size: 14px;
+	line-height: 2em;
+	font-weight: 50;
 	font-style: normal;
 	letter-spacing: .015em;
 }
@@ -108,6 +119,10 @@ ul > li {
 
 .content-block {
 	padding: 2%, 0, 2%, 0;
+}
+
+.padding-medium {
+	padding-top: 5%;
 }
 
 .col-centered {
@@ -146,6 +161,10 @@ ul > li {
 
 .info {
 	color: white;
+}
+
+.gold {
+	color: #d4b12b;
 }
 
 .mobile-brand {
