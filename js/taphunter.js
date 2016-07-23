@@ -29,7 +29,6 @@ var $jsonp = (function(){
 })(); 
 
 function populatePage(json) {
-	// START HERE -- This doesn't hit because we outofindexarray way below on the previous calls
 	outputSubMenu('taps', json.taps)
 	outputSubMenu('bottles', json.bottles)
 };
@@ -74,23 +73,6 @@ function outputSubMenu(drinkType, drinkList){
 	}
 }
 
-/*
-Temporarily using a static wine list
-function outputWineSubMenu(drinkList) {
-	var redWinesUl = document.getElementById('wines-red-ul')
-	var whiteWinesUl = document.getElementById('wines-white-ul')
-
-	for (var w = 0; w < drinkList.length; w++) {
-		if(drinkList[w].category_name == "Red") {
-			redWinesUl.insertAdjacentHTML('beforeend', '<li class="menu-item">'+drinkList[w].name+'</li>')
-		}
-		else if (drinkList[w].category_name == "White") {
-			whiteWinesUl.insertAdjacentHTML('beforeend', '<li class="menu-item">'+drinkList[w].name+'</li>')
-		}
-	}
-}*/
-
-
 function outputColumnDiv(drinkType, columnNumber) {
 	return '<div id='+drinkType+'-col-'+columnNumber+' class="col-md-3"></div>'
 }
@@ -134,9 +116,6 @@ function paintThatShitGold(state) {
 		return state;
 	}
 }
-
-//Please remove this before production, goofass
-var data;
 
 $jsonp.send('https://www.taphunter.com/widgets/location/v3/6729532695642112.jsonp?callback=handleCallback', {
     callbackName: 'handleCallback',
