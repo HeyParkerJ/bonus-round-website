@@ -18,8 +18,8 @@
     </head>
 
     <body data-spy="scroll" data-target=".navbar" data-offset="20">
-        <main role="main">
-            <nav class="navbar nav navbar-inverse navbar-fixed-top" role="navigation">
+        <main>
+            <nav class="navbar nav navbar-inverse navbar-fixed-top">
                 <div class="container">
                     <div class="navbar-header">
                         <div class="navbar-brand hidden-xs">
@@ -49,7 +49,10 @@
 
                                 <li><a href="#drinks-anchor" class="hidden-xs nav-link">Drinks</a></li>
                                 <li><a href="#drinks-anchor" class="visible-xs nav-link" data-toggle="collapse" data-target=".navbar-collapse">Drinks</a></li>
-
+                                
+                                <li><a href="#events-anchor" class="hidden-xs nav-link">Events</a></li>
+                                <li><a href="#events-anchor" class="visible-xs nav-link" data-toggle="collapse" data-target=".navbar-collapse">Events</a></li>
+                                
                                 <li><a href="#findus-anchor" class="hidden-xs nav-link">Find Us</a></li>
                                 <li><a href="#findus-anchor" class="visible-xs nav-link" data-toggle="collapse" data-target=".navbar-collapse">Find Us</a></li>
                             </ul>
@@ -131,7 +134,7 @@
                 <div class="container">
                     <div class="content-header col-centered padding-small">
                         <h2><span id="drinks-anchor" class="anchor"></span>Drinks</h2>
-                        <div class="menu-text">(Happy Hour - Every Day 4-6)</h4>
+                        <div class="menu-text"><small>(Happy Hour - Every Day 4-6)</small>
                     </div>
                     <!-- <div class="col-md-6"> -->
                     <h3 class="menu-header-3 padding-small">On Draft</h3>
@@ -139,59 +142,54 @@
                     
                     <h3 class="menu-header-3 padding-small">Cans & Bottles</h3>
                     <div class="row menu-text" id="bottles"> </div>
+                        <div class="row menu-text col-md-6" id="cocktails">
+                            <h3 class="menu-header-3 padding-small">Cocktails</h3>
+                            <ul>
+                                <li><p class="drink-name">Moxxi's Mule</p>
+                                Green Chili Vodka - Lemon - Blueberry - Ginger Beer</li>
 
-                    <!-- For future updates
-                    <h3 class="menu-header-3">Cocktails</h3>
-                    <div class="row menu-text" id="cocktails"> </div> -->
-                            <div class="row menu-text col-md-6" id="cocktails">
-                                <h3 class="menu-header-3 padding-small">Cocktails</h3>
-                                <ul>
-                                    <li><p class="drink-name">Moxxi's Mule</p>
-                                    Green Chili Vodka - Lemon - Blueberry - Ginger Beer</li>
+                                <li><p class="drink-name">Golden Gun</p>
+                                Japanese Whiskey - Amaro - Lemon - Pineapple</li>
 
-                                    <li><p class="drink-name">Golden Gun</p>
-                                    Japanese Whiskey - Amaro - Lemon - Pineapple</li>
+                                <li><p class="drink-name">Plasma Grenade</p>
+                                Rum - Blue Curacao - Lime - Passionfruit</li>
 
-                                    <li><p class="drink-name">Plasma Grenade</p>
-                                    Rum - Blue Curacao - Lime - Passionfruit</li>
+                                <li><p class="drink-name">Full Restore</p>
+                                Gin - Aloe Liqueur - Lime Juice - Ginger - Mint</li>
 
-                                    <li><p class="drink-name">Full Restore</p>
-                                    Gin - Aloe Liqueur - Lime Juice - Ginger - Mint</li>
+                                <li><p class="drink-name">Dry Heat</p>
+                                Tequila - Chili Liqueur - Lime - Grapefruit</li>
 
-                                    <li><p class="drink-name">Dry Heat</p>
-                                    Tequila - Chili Liqueur - Lime - Grapefruit</li>
+                                <li><p class="drink-name">Power Flower</p>
+                                Mescal - Rhum - Lime - Strawberry - Mole' Bitters</li>
 
-                                    <li><p class="drink-name">Power Flower</p>
-                                    Mescal - Rhum - Lime - Strawberry - Mole' Bitters</li>
+                                <li><p class="drink-name">The Defender</p>
+                                Kraken - Vanilla - Lime - Pineapple</li>
 
-                                    <li><p class="drink-name">The Defender</p>
-                                    Kraken - Vanilla - Lime - Pineapple</li>
+                                <li><p class="drink-name">Rogue Squadron</p>
+                                Gin - Raspberry - Lemon</li>
 
-                                    <li><p class="drink-name">Rogue Squadron</p>
-                                    Gin - Raspberry - Lemon</li>
+                                <li><p class="drink-name">The Killing Joke</p>
+                                Gin - Green Chartreuse - Lime - Blueberry
+                                </li>
+                            </ul>
+                        </div>
 
-                                    <li><p class="drink-name">The Killing Joke</p>
-                                    Gin - Green Chartreuse - Lime - Blueberry
-                                    </li>
-                                </ul>
-                            </div>
-
-                            <div class="menu-text">
-                            <h3 class="menu-header-3 padding-small">Wine</h3>
-                                <h4 class="menu-header-4">Reds</h4>
-                                <ul>
-                                    <li>Cartildge & Brone - Pino Noir - North CA</li>
-                                    <li>Coppola Rosso - Red Blend - CA</li>
-                                    <li>Expedition - Cabernet Sauvignon - WA</li>
-                                    <li>Crios - Malbec - Argentina</li>
-                                </ul>
-                                <h4 class="menu-header-4">Whites</h4>
-                                <ul>
-                                    <li>Nobilissima - Pino Grigio - Italy</li>
-                                    <li>Angeline Reserve - Sauvignon Blanc - Conoma CA</li>
-                                    <li>Charles Smith Eve - Chardonnay - WA</li>
-                                </ul>
-                            </div>
+                        <div class="menu-text">
+                        <h3 class="menu-header-3 padding-small">Wine</h3>
+                            <h4 class="menu-header-4">Reds</h4>
+                            <ul>
+                                <li>Cartildge & Brone - Pino Noir - North CA</li>
+                                <li>Coppola Rosso - Red Blend - CA</li>
+                                <li>Expedition - Cabernet Sauvignon - WA</li>
+                                <li>Crios - Malbec - Argentina</li>
+                            </ul>
+                            <h4 class="menu-header-4">Whites</h4>
+                            <ul>
+                                <li>Nobilissima - Pino Grigio - Italy</li>
+                                <li>Angeline Reserve - Sauvignon Blanc - Conoma CA</li>
+                                <li>Charles Smith Eve - Chardonnay - WA</li>
+                            </ul>
                         </div>
                     </div> <!-- .row -->
                 </div> <!-- .container -->
@@ -201,7 +199,7 @@
                 <div class="container">
                     <div class="content-header col-centered padding-small">
                         <h2><span id="food-anchor" class="anchor"></span>Food</h2>
-                        <div class="menu-text">(Happy Hour - Every Day 4-6)</div>
+                        <div class="menu-text"><small>(Happy Hour - Every Day 4-6)</small></div>
                     </div>
                     <div class="row menu-text">
                         <div class="col-md-3">
@@ -274,7 +272,7 @@
                 </div> <!-- .container -->
             </div> <!-- .content-block #food-content -->
 
-            <div class="content-block zebra-stripe" id="findus-content">
+            <div class="content-block zebra-stripe padding-small-bottom" id="findus-content">
                 <div class="container">
                     <div class="content-header col-centered">
                         <h2 class="padding-small"><span id="findus-anchor" class="anchor"></span>Find Us</h2>

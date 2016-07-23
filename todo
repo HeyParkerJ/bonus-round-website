@@ -2,8 +2,6 @@ TODO:
 
 	PRODUCTION ROADBLOCKS:
 		Polish code
-		Validate HTML
-		View on Mobile
 		Verify CSS changes weren't useless
 
 	FEATURES:
@@ -11,24 +9,13 @@ TODO:
 	BUGS:
 
 	WISHLIST:
-		Prettify spacing plz
-
 		References to "Bonus Round" use simson font
 			Problem doing this is that it looks bad
 			when using default import options
 
-		Events Tie In + Carousel
-			Could use this as events display
+		Carousel + Events tie in
 
 		Hover description for beers
-
-events: {
-	FB event calendar tie-in
-	idea: name reoccurring weeklies and link to Facebook for special events
-	thurs: 7pm, geeks who drink
-	sun: 7pm karoiki
-	wed: 8pm open mic
-}
 
 happy hour: {
 	find condensed version - took pic
