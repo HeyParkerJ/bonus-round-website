@@ -5,7 +5,7 @@ var $jsonp = (function(){
     var callback_name = options.callbackName || 'callback',
       on_success = options.onSuccess || function(){},
       on_timeout = options.onTimeout || function(){},
-      timeout = options.timeout || 10; // sec
+      timeout = options.timeout || 10;
 
     var timeout_trigger = window.setTimeout(function(){
       window[callback_name] = function(){};
@@ -28,7 +28,7 @@ var $jsonp = (function(){
   return that;
 })(); 
 
-function populatePage(json) {
+function populatePage(json) {g
 	outputSubMenu('taps', json.taps)
 	outputSubMenu('bottles', json.bottles)
 };
@@ -42,7 +42,7 @@ function outputSubMenu(drinkType, drinkList){
 	var itemsPerColumn = Math.floor(drinkList.length / columnsNeeded);
 	var remainder = drinkList.length % columnsNeeded
 
-	for (var columnNumber = 0; columnNumber <= columnsNeeded && nextItemToOutput < drinkList.length; columnNumber++){ //for every column
+	for (var columnNumber = 0; columnNumber <= columnsNeeded && nextItemToOutput < drinkList.length; columnNumber++){
 		var itemsInThisColumn = itemsPerColumn;
 
 		if(remainder > 0) {
