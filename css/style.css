@@ -12,6 +12,7 @@ body {
 
 h1, h2, h3, h4, h5, h6, p, a {
 	text-shadow: 0px 0px 0px rgba(0,0,0,1);
+	padding: 0px;
 }
 h1, h2 {
 	font-weight: 600;
@@ -22,18 +23,14 @@ h1, h2 {
 }
 
 .menu-header-3 {
+	padding: 2%, 0, 2%, 0;
 	font-weight: 500;
 	font-size: 30px;
-}
-
-.drink-name {
-	padding-top: 4%;
-	color: #d4b12b;
-	font-size: 20px;
+	text-align: center;
 }
 
 .menu-header-4 {
-	padding-top: 4%;
+	padding: 2%, 0, 2%, 0;
 	color: #d4b12b;
 	font-size: 20px;
 }
@@ -43,13 +40,23 @@ h1, h2 {
 	font-size: 20px;
 }
 
+.drink-name {
+	padding: 2%, 0, 2%, 0;
+	color: #d4b12b;
+	font-size: 20px;
+}
+
+.padding-small {
+	padding-top: 2%;
+	padding-bottom: 2%;
+}
+
+.padding-small-bottom {
+	padding-bottom: 2%;
+}
+
 h1, h2, h3 {
 	color: #d4b12b;
-}
-.content-header > h1, 
-.content-header > h2, 
-.content-header > h3 {
-	padding-bottom: 2%;
 }
 
 * {
@@ -58,8 +65,13 @@ h1, h2, h3 {
 	box-sizing: border-box;
 }
 
+ul {
+	padding: 0;
+}
+
 ul > li {
 	list-style: none;
+	text-align: center;
 }
 
 .construction-text .construction-lead-in {
@@ -83,9 +95,19 @@ ul > li {
 .menu-text{
 	color: #f8f6f6;
 	font-family: 'Open Sans', sans-serif;
-	font-size: 20px;
-	line-height: 1.8em;
+	font-size: 16px;
+	line-height: 2em;
 	font-weight: 100;
+	font-style: normal;
+	letter-spacing: .015em;
+}
+
+.small-text{
+	color: #f8f6f6;
+	font-family: 'Open Sans', sans-serif;
+	font-size: 14px;
+	line-height: 2em;
+	font-weight: 50;
 	font-style: normal;
 	letter-spacing: .015em;
 }
@@ -96,8 +118,11 @@ ul > li {
 }
 
 .content-block {
-	padding-top: 2%;
-	padding-bottom: 2%;
+	padding: 2%, 0, 2%, 0;
+}
+
+.padding-medium {
+	padding-top: 5%;
 }
 
 .col-centered {
@@ -136,6 +161,10 @@ ul > li {
 
 .info {
 	color: white;
+}
+
+.gold {
+	color: #d4b12b;
 }
 
 .mobile-brand {

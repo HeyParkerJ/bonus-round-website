@@ -1,6 +1,24 @@
--favicon
-BUGS
+TODO:
 
-Wishlist
+	PRODUCTION ROADBLOCKS:
+		Polish code
+		Verify CSS changes weren't useless
 
-- Make food/drinks/games content easier for BR to manage
+	FEATURES:
+
+	BUGS:
+
+	WISHLIST:
+		References to "Bonus Round" use simson font
+			Problem doing this is that it looks bad
+			when using default import options
+
+		Carousel + Events tie in
+
+		Hover description for beers
+
+happy hour: {
+	find condensed version - took pic
+}
+
+https://www.dropbox.com/sh/ui41ut9nxvqsuoz/AACpNtFJ3mbezOhXuclTSFXUa?dl=0
