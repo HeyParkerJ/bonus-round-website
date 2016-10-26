@@ -3,6 +3,7 @@ TODO:
 FEATURES:
 
 BUGS:
+	Navbar has issues between width: 991px && 769px
 
 WISHLIST:
 	Smoothscroll plugin

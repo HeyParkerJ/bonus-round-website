@@ -8,10 +8,5 @@ define(function (require) {
     var google = require('./google');
     var google_analytics = require ('./google-analytics');
 
-    // Load library/vendor modules using
-    // full IDs, like:
-    var $ = require('jQuery.min')
-    var bootstrap = require('bootstrap.min');
-
-    console.log("main.js loaded")
+    console.log("requireJS loaded")
 });
