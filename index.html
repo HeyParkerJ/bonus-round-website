@@ -49,10 +49,10 @@
 
                                 <li><a href="#food-anchor" class="hidden-xs nav-link">Food</a></li>
                                 <li><a href="#food-anchor" class="visible-xs nav-link" data-toggle="collapse" data-target=".navbar-collapse">Food</a></li>
-                                
+
                                 <li><a href="#events-anchor" class="hidden-xs nav-link">Events</a></li>
                                 <li><a href="#events-anchor" class="visible-xs nav-link" data-toggle="collapse" data-target=".navbar-collapse">Events</a></li>
-                                
+
                                 <li><a href="#findus-anchor" class="hidden-xs nav-link">Find Us</a></li>
                                 <li><a href="#findus-anchor" class="visible-xs nav-link" data-toggle="collapse" data-target=".navbar-collapse">Find Us</a></li>
                             </ul>
@@ -80,7 +80,7 @@
                     <div class="col-md-10 col-centered">
                         <div class="row aboutus-text menu-text">
                             <h2 class="menu-header-3 padding-small">The Only Nerd Hub In Phoenix</h2>
-                            <p>Geek Out & Game On with some of the best craft cocktails in the valley, a killer rotating draft menu, delicious food, and 20 of your favorite classic arcade games always set to FREE PLAY! Whether you are meeting up with friends, playing tabletop games, chilling at the bar, or just reading your favorite comic book, this is the place to be. Bonus Round is for everyone - the Nerds, Geeks, Hipsters, Gamers, and Underdogs - a place to come and be yourself, celebrate your passions, embrace your Nerdhood.</p>
+                            <p id="content_description">Geek Out & Game On with some of the best craft cocktails in the valley, a killer rotating draft menu, delicious food, and 20 of your favorite classic arcade games always set to FREE PLAY! Whether you are meeting up with friends, playing tabletop games, chilling at the bar, or just reading your favorite comic book, this is the place to be. Bonus Round is for everyone - the Nerds, Geeks, Hipsters, Gamers, and Underdogs - a place to come and be yourself, celebrate your passions, embrace your Nerdhood.</p>
                         </div> <!-- .row -->
                     </div> <!-- .col-md-10 -->
                 </div> <!-- .container -->
@@ -141,7 +141,7 @@
                         <div class="row menu-text" id="taps-lastupdated"></div>
                     </h3>
                     <div class="row menu-text" id="taps"> </div>
-                    
+
 
                     <h3 class="menu-header-3 padding-small">Cans & Bottles
                         <div class="row menu-text" id="bottles-lastupdated"></div>
@@ -304,29 +304,7 @@
                     </div> <!-- .social-icons vertical -->
                     <div class="map col-md-8">
                         <div id="map">
-                           <script>
-                           var latLng = {lat: 33.509740, lng: -112.075713};
-                           var map;
-                            function initMap() {
-                                map = new google.maps.Map(document.getElementById('map'), {
-                                    center: latLng,
-                                    zoom: 11,
-                                    scrollwheel: false
-                                });
 
-                            var marker = new google.maps.Marker({
-                                    position: latLng,
-                                    map: map,
-                                    title: 'Bonus Round!'
-                                });
-
-                              marker.addListener('click', function(e) {
-                                window.location.href="https://www.google.com/maps/place/Bonus+Round/@33.5098144,-112.0756731,15z/data=!4m2!3m1!1s0x0:0x32b5be42e5a158a6?sa=X&ved=0ahUKEwj7pu6nj7zOAhXD3SYKHaWEAwAQ_BIIdjAK"
-                              });
-                            }
-
-                           </script>
-                           <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA0aKI9Ge7Z0f459dRGeVieStj2HyoOXqE&callback=initMap" async defer></script>
                         </div> <!-- #map -->
                     </div> <!--.map-->
                     <div class="info col-centered">
@@ -355,18 +333,8 @@
         &copy; 2016 - Bonus Round
     </footer>
         <!-- script -->
-    <script type="text/javascript" src="js/taphunter.js"></script>
+    <script data-main="app" src="js/lib/require.js"></script>
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
-    <script type="text/javascript" src="js/vendor/bootstrap.min.js"></script>
-    <script> <!-- Google analytics -->
-      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-      })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-
-      ga('create', 'UA-79274975-1', 'auto');
-      ga('send', 'pageview');
-
-    </script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA0aKI9Ge7Z0f459dRGeVieStj2HyoOXqE&callback=initMap" async defer></script>
     </body>
 </html>
