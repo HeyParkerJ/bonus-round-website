@@ -1,25 +1,25 @@
 TODO:
 
-	PRODUCTION ROADBLOCKS:
-		Cleanup CSS
+Display Menu from .txt file
+Display arcades from .txt file
+Display events from Taphunter
 
-	FEATURES:
+Look into implementing flexbox for responsive columns - would greatly clean up HTML markup
+	Need to look into usability EXTENSIVELY if we decide to do this
 
-	BUGS:
+PRODUCTION ROADBLOCKS:
+	Cleanup CSS
 
-	WISHLIST:
-		Smoothscroll plugin
+FEATURES:
 
-		References to "Bonus Round" use simson font
-			Problem doing this is that it looks bad
-			when using default import options
+BUGS:
 
-		Carousel + Events tie in
+Navbar craps out between certain widths
+CSS Needs fixing - standardize margins and padding with EM, consider using stylus variables
 
-		Hover description for beers
+WISHLIST:
+	Smoothscroll plugin
 
-		Improve contrast ratio - http://leaverou.github.io/contrast-ratio/#%23d4b12b-on-%236b6b6b
+	Hover description for beers
 
-happy hour: {
-	find condensed version - took pic
-}
+	Improve contrast ratio - http://leaverou.github.io/contrast-ratio/#%23d4b12b-on-%236b6b6b

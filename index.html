@@ -49,10 +49,10 @@
 
                                 <li><a href="#food-anchor" class="hidden-xs nav-link">Food</a></li>
                                 <li><a href="#food-anchor" class="visible-xs nav-link" data-toggle="collapse" data-target=".navbar-collapse">Food</a></li>
-                                
+
                                 <li><a href="#events-anchor" class="hidden-xs nav-link">Events</a></li>
                                 <li><a href="#events-anchor" class="visible-xs nav-link" data-toggle="collapse" data-target=".navbar-collapse">Events</a></li>
-                                
+
                                 <li><a href="#findus-anchor" class="hidden-xs nav-link">Find Us</a></li>
                                 <li><a href="#findus-anchor" class="visible-xs nav-link" data-toggle="collapse" data-target=".navbar-collapse">Find Us</a></li>
                             </ul>
@@ -141,7 +141,7 @@
                         <div class="row menu-text" id="taps-lastupdated"></div>
                     </h3>
                     <div class="row menu-text" id="taps"> </div>
-                    
+
 
                     <h3 class="menu-header-3 padding-small">Cans & Bottles
                         <div class="row menu-text" id="bottles-lastupdated"></div>
@@ -151,51 +151,16 @@
 
                     <div class="row menu-text col-md-6" id="cocktails">
                         <h3 class="menu-header-3 padding-small">Cocktails</h3>
-                        <ul>
-                            <li><p class="drink-name">Moxxi's Mule</p>
-                            Green Chili Vodka - Lemon - Blueberry - Ginger Beer</li>
-
-                            <li><p class="drink-name">Golden Gun</p>
-                            Japanese Whiskey - Amaro - Lemon - Pineapple</li>
-
-                            <li><p class="drink-name">Plasma Grenade</p>
-                            Rum - Blue Curacao - Lime - Passionfruit</li>
-
-                            <li><p class="drink-name">Full Restore</p>
-                            Gin - Aloe Liqueur - Lime Juice - Ginger - Mint</li>
-
-                            <li><p class="drink-name">Dry Heat</p>
-                            Tequila - Chili Liqueur - Lime - Grapefruit</li>
-
-                            <li><p class="drink-name">Power Flower</p>
-                            Mescal - Rhum - Lime - Strawberry - Mole' Bitters</li>
-
-                            <li><p class="drink-name">The Defender</p>
-                            Kraken - Vanilla - Lime - Pineapple</li>
-
-                            <li><p class="drink-name">Rogue Squadron</p>
-                            Gin - Raspberry - Lemon</li>
-
-                            <li><p class="drink-name">The Killing Joke</p>
-                            Gin - Green Chartreuse - Lime - Blueberry
-                            </li>
-                        </ul>
+                        <ul id="content_cocktails"></ul>
                     </div>
 
                         <div class="menu-text">
                         <h3 class="menu-header-3 padding-small">Wine</h3>
                             <h4 class="menu-header-4">Reds</h4>
-                            <ul>
-                                <li>Cartildge & Brone - Pino Noir - North CA</li>
-                                <li>Coppola Rosso - Red Blend - CA</li>
-                                <li>Expedition - Cabernet Sauvignon - WA</li>
-                                <li>Crios - Malbec - Argentina</li>
+                            <ul id="content_reds">
                             </ul>
                             <h4 class="menu-header-4">Whites</h4>
-                            <ul>
-                                <li>Nobilissima - Pino Grigio - Italy</li>
-                                <li>Angeline Reserve - Sauvignon Blanc - Conoma CA</li>
-                                <li>Charles Smith Eve - Chardonnay - WA</li>
+                            <ul id="content_whites">
                             </ul>
                         </div>
                     </div> <!-- .row -->
@@ -259,22 +224,10 @@
                 <div class="container">
                     <div class="content-header col-centered">
                         <h2><span id="events-anchor" class="anchor"></span>Events</h2>
-                        <div class="menu-text">Take a look at our weekly reoccurring events!</div>
+                        <div class="menu-text">Take a look at our upcoming events!</div>
                         <div class="small-text">(<a href="https://www.facebook.com/BonusRoundPhx" class="gold">Follow us on Facebook</a> to keep up to date on tournaments, beta testings of weeklies, and novelty events)</div>
                     </div>
-                    <div class="row menu-text col-centered padding-small">
-                        <div class="col-md-4">
-                            <h3 class="menu-header-4 padding-small"><strong>Geeks Who Drink (Trivia Night)</strong> - Thursday 7PM</h3>
-                                <div class="menu-text">Geeks Who Drink pub Trivia is Free to play, win bar cash and Internet glory!</div>
-                        </div>
-                        <div class="col-md-4">
-                            <h3 class="menu-header-4 padding-small"><strong>Karaoke Night</strong> - Sunday 7PM</h3>
-                                    <div class="menu-text">Start your week on a high note! Bonus Round is extending it's hours in order to feed your need to sing! Bring your friends, carry a tune and hold your liquor!</div>
-                        </div>
-                        <div class="col-md-4">
-                            <h3 class="menu-header-4 padding-small"><strong>Open Mic Night</strong> - Wednesday 8PM</h3>
-                                 <div class="menu-text">Led by Cameron DeGurski, he'll provide the mic if you provide the skill. Anyone can showcase their talents during the 2 hour open mic event, but it's first come first serve so get here early and secure your spot!</div>
-                        </div>
+                    <div id="content_events" class="row menu-text col-centered padding-small">
                     </div>
                 </div> <!-- .container -->
             </div> <!-- .content-block #food-content -->
