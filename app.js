@@ -8,6 +8,9 @@ requirejs.config({
     shim: {
         'bootstrap': {
             deps:['jquery']
+        },
+        'cms': {
+          deps:['content']
         }
     }
 });

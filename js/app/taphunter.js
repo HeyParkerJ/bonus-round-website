@@ -26,7 +26,7 @@ var $jsonp = (function(){
   }
 
   return that;
-})(); 
+})();
 
 function populatePage(json) {
 	outputSubMenu('taps', json.taps)
@@ -60,7 +60,7 @@ function outputSubMenu(drinkType, drinkList){
 
 
 		var ul = document.getElementById(drinkType+'-ul-'+columnNumber)
-		
+
 		for (var j = 0; j < itemsInThisColumn && nextItemToOutput < drinkList.length; j++){
 			if(drinkType === 'taps') {
 				ul.insertAdjacentHTML('beforeend', outputTapsLiElement(drinkList, nextItemToOutput))
@@ -68,7 +68,7 @@ function outputSubMenu(drinkType, drinkList){
 			else {
 				ul.insertAdjacentHTML('beforeend', outputLiElement(drinkList, nextItemToOutput))
 			}
-			
+
 			if (drinkList[nextItemToOutput].date_added_timestamp > lastUpdated) {
 				lastUpdated = drinkList[nextItemToOutput].date_added_timestamp
 			}
@@ -133,6 +133,7 @@ $jsonp.send('https://www.taphunter.com/widgets/location/v3/6729532695642112.json
     onSuccess: function(json){
     	//DEBUG - console.log('successfully retrieved taphunter data!', json);
     	data = json;
+       console.log(data)
         populatePage(json);
     },
     onTimeout: function(){
