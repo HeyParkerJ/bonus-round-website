@@ -30,21 +30,38 @@ var $jsonp = (function(){
 
 function populatePage(json) {
   console.log(json)
-	outputSubMenu('taps', json.taps)
-	outputSubMenu('bottles', json.bottles)
+  outputColumnedMenu({
+    data: json.taps,
+    menuType: 'cms_taps',
+    min_items_for_multicolumn: 8,
+    outputMenu: function(data) {
+      return 'beforeend', '<li class="menu-item"><strong>'+data.beer.name+'</strong></br><small>'+" ("+data.beer.abv+"% / "+data.beer.ibu+" IBU) - "+paintThatShitGold(data.brewery.state)+'</small></li>'
+    }
+  })
+	outputColumnedMenu({
+    data: json.bottles,
+    menuType: 'bottles',
+    min_items_for_multicolumn: 8,
+    outputMenu: function(data){
+      return 'beforeend', '<li class="menu-item"><strong>'+data.beer.name+'</strong><small>'+" - "+paintThatShitGold(data.brewery.state)+'</small></li>'
+    }
+  })
   outputCocktails(json.cocktails)
   outputWines(json.wines)
   outputEvents(json.events)
 };
 
-function outputEvents(data) {
-  var eventsUl = document.getElementById("content_events");
+function paintThatShitGold(state) {
+  return state === "AZ" ? '<span class="gold">'+state+'</span>' : '<span>'+state+'</span>';
+}
 
+function outputEvents(data) {
   for(var i = 0; i < data.length; i++) {
-    eventsUl.insertAdjacentHTML('beforeend', (function(data) {
+    var description = data[i].description.length > 200 ? data[i].description.substring(0,300).concat("...") : data[i].description;
+    document.getElementById("content_events").insertAdjacentHTML('beforeend', (function(data) {
       return "<div class='col-md-4'>"+
           "<h3 class='menu-header-4 padding-small'><strong>"+data.title+"</strong></h3><div>"+data.event_start_date+" - "+data.event_start_time+"</div>"+
-              "<div class='menu-text'>"+data.description+"</div>"+
+              "<div class='menu-text'>"+description+"</div>"+
       "</div>"
     })(data[i]))
   }
@@ -78,17 +95,22 @@ function outputCocktails(data) {
   }
 }
 
-function outputSubMenu(drinkType, drinkList){
-	var columnsNeeded = 4;
-	var nextItemToOutput = 0;
-	var lastUpdated = '';
+function outputColumnedMenu(displayObject){
+  var itemList, menuType, min_items_for_multicolumn, columnsNeeded, nextItemToOutput, lastUpdated
 
-	if(drinkList.length < 8) { columnsNeeded = 1 };
+  itemList = displayObject.data
+  menuType = displayObject.menuType
+  min_items_for_multicolumn = displayObject.min_items_for_multicolumn
+  columnsNeeded = 4;
+	nextItemToOutput = 0;
+	lastUpdated = '';
 
-	var itemsPerColumn = Math.floor(drinkList.length / columnsNeeded);
-	var remainder = drinkList.length % columnsNeeded
+	if(itemList.length < min_items_for_multicolumn) { columnsNeeded = 1 };
 
-	for (var columnNumber = 0; columnNumber <= columnsNeeded && nextItemToOutput < drinkList.length; columnNumber++){
+	var itemsPerColumn = Math.floor(itemList.length / columnsNeeded);
+	var remainder = itemList.length % columnsNeeded
+
+	for (var columnNumber = 0; columnNumber <= columnsNeeded && nextItemToOutput < itemList.length; columnNumber++){
 		var itemsInThisColumn = itemsPerColumn;
 
 		if(remainder > 0) {
@@ -96,35 +118,23 @@ function outputSubMenu(drinkType, drinkList){
 			remainder--
 		}
 
-    function outputColumnDiv(drinkType, columnNumber) {
-    	return '<div id='+drinkType+'-col-'+columnNumber+' class="col-md-3"></div>'
-    }
-    function outputUlElement(drinkType, columnNumber) {
-    	return 'beforeend', '<ul id="'+drinkType+'-ul-'+columnNumber+'"></ul>'
-    }
+		document.getElementById(menuType).insertAdjacentHTML('beforeend', (function(menuType, columnNumber){
+      return '<div id='+menuType+'-col-'+columnNumber+' class="col-md-3"></div>'
+    })(menuType, columnNumber))
 
-		var div = document.getElementById(drinkType)
-		div.insertAdjacentHTML('beforeend', outputColumnDiv(drinkType, columnNumber))
+		document.getElementById(menuType+'-col-'+columnNumber).insertAdjacentHTML('beforeend', (function(menuType, columnNumber){
+      return 'beforeend', '<ul id="'+menuType+'-ul-'+columnNumber+'"></ul>'
+    })(menuType, columnNumber))
 
+		var ul = document.getElementById(menuType+'-ul-'+columnNumber)
 
-		var bootstrapDiv = document.getElementById(drinkType+'-col-'+columnNumber)
-		bootstrapDiv.insertAdjacentHTML('beforeend', outputUlElement(drinkType, columnNumber))
+		for (var j = 0; j < itemsInThisColumn && nextItemToOutput < itemList.length; j++){
+      var data = itemList[nextItemToOutput]
+			ul.insertAdjacentHTML('beforeend', displayObject.outputMenu(data))
 
-
-		var ul = document.getElementById(drinkType+'-ul-'+columnNumber)
-
-		for (var j = 0; j < itemsInThisColumn && nextItemToOutput < drinkList.length; j++){
-			if(drinkType === 'taps') {
-				ul.insertAdjacentHTML('beforeend', outputTapsLiElement(drinkList, nextItemToOutput))
+			if (itemList[nextItemToOutput].date_added_timestamp > lastUpdated) {
+				lastUpdated = itemList[nextItemToOutput].date_added_timestamp
 			}
-			else {
-				ul.insertAdjacentHTML('beforeend', outputBeerLiElement(drinkList, nextItemToOutput))
-			}
-
-			if (drinkList[nextItemToOutput].date_added_timestamp > lastUpdated) {
-				lastUpdated = drinkList[nextItemToOutput].date_added_timestamp
-			}
-
 			nextItemToOutput++
 		}
 	}
@@ -132,38 +142,15 @@ function outputSubMenu(drinkType, drinkList){
 	var myDate = new Date(lastUpdated*1000);
 	var lastUpdatedDate = myDate.toLocaleString();
 
-	var lastUpdatedDiv = document.getElementById(drinkType+'-lastupdated')
-	lastUpdatedDiv.insertAdjacentHTML('beforeend',  '<div>Last updated on: <span class="gold">'+lastUpdatedDate+' MST</span></div>')
-}
-
-function outputBeerLiElement(drinkList, nextItemToOutput) {
-	var beer = drinkList[nextItemToOutput].beer
-	var brewery = drinkList[nextItemToOutput].brewery
-	return 'beforeend', '<li class="menu-item"><strong>'+beer.name+'</strong><small>'+" - "+paintThatShitGold(brewery.state)+'</small></li>'
-}
-
-function outputTapsLiElement(drinkList, nextItemToOutput) {
-	var beer = drinkList[nextItemToOutput].beer
-	var brewery = drinkList[nextItemToOutput].brewery
-
-	return 'beforeend', '<li class="menu-item"><strong>'+beer.name+'</strong></br><small>'+" ("+beer.abv+"% / "+beer.ibu+" IBU"+
-	") - "+paintThatShitGold(brewery.state)+'</small></li>'
-}
-
-function paintThatShitGold(state) {
-	if (state === "AZ") {
-		return '<span class="gold">'+state+'</span>'
-	}
-	else {
-		return state;
-	}
+	document.getElementById(menuType+'-lastupdated').insertAdjacentHTML('beforeend',  '<div>Last updated on: <span class="gold">'+lastUpdatedDate+' MST</span></div>')
 }
 
 $jsonp.send('https://www.taphunter.com/widgets/location/v3/6729532695642112.jsonp?callback=handleCallback', {
     callbackName: 'handleCallback',
     onSuccess: function(json){
-    	//DEBUG - console.log('successfully retrieved taphunter data!', json);
-    	data = json;
+    	// DEBUG - console.log('successfully retrieved taphunter data!', json);
+    	// This will expose the data to whole page:
+      // data = json;
         populatePage(json);
     },
     onTimeout: function(){
