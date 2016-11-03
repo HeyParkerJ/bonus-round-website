@@ -1,0 +1,234 @@
+@import 'reset.scss';
+
+$primary-background-color: #6b6b6b;
+$br-gold: #d4b12b;
+$medium-margin: 2em 2em;
+
+body, html{
+	margin: 0px;
+	padding: 0px;
+  font-size: 14px;
+	font-family: 'Roboto', sans-serif;
+	height: 100%;
+	background-color: $primary-background-color;
+}
+
+body {
+  margin: 130px 0px 0px 0px;
+}
+
+h1, h2, h3, h4, h5, h6, p, a {
+	text-shadow: 0px 0px 0px rgba(0,0,0,1);
+	padding: 0px;
+	margin: 0;
+}
+
+h1, h2 {
+	font-weight: 600;
+}
+
+a.link {
+	color:white;
+	text-decoration: underline;
+}
+
+.menu-header {
+	color: $br-gold;
+}
+
+.menu-header-3 {
+	padding: 2%, 0, 2%, 0;
+	font-weight: 500;
+	font-size: 30px;
+	text-align: center;
+}
+
+.menu-header-4 {
+	padding: 2%, 0, 2%, 0;
+	color: #d4b12b;
+	font-size: 20px;
+}
+
+.about-header-4 {
+	color: #d4b12b;
+	font-size: 20px;
+}
+
+.drink-name {
+	margin-top: .5em;
+	padding: 2%, 0, 2%, 0;
+	color: #d4b12b;
+	font-size: 20px;
+}
+
+.padding-small {
+	padding-top: 2%;
+	padding-bottom: 2%;
+}
+
+.padding-small-bottom {
+	padding-bottom: 2%;
+}
+
+h1, h2, h3 {
+	color: #d4b12b;
+}
+
+* {
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+ul {
+	padding: 0;
+}
+
+ul > li {
+	list-style: none;
+	text-align: center;
+}
+
+.construction-text .construction-lead-in {
+	font-size: 20px;
+	color: #d4b12b;
+	background-color: black;
+	opacity: 0.8;
+    filter: alpha(opacity=80); /* For IE8 and earlier */
+    max-width: 100%;
+}
+
+.construction-text a:hover {
+	text-decoration: none;
+}
+
+.splash-image {
+	max-height: 100%;
+	max-width: 100%;
+}
+
+.menu-text{
+	color: #f8f6f6;
+	font-family: 'Open Sans', sans-serif;
+	font-size: 16px;
+	line-height: 2em;
+	font-weight: 100;
+	font-style: normal;
+	letter-spacing: .015em;
+}
+
+.small-text{
+	color: #f8f6f6;
+	font-family: 'Open Sans', sans-serif;
+	font-size: 14px;
+	line-height: 2em;
+	font-weight: 50;
+	font-style: normal;
+	letter-spacing: .015em;
+}
+
+.aboutus-text {
+	color: #f8f6f6;
+	line-height: 2em;
+}
+
+.content-block {
+	padding: 2%, 0, 2%, 0;
+}
+
+.padding-medium {
+	padding-top: 5%;
+}
+
+.col-centered {
+	float: none;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.games-text > ul > li {
+	font: 20px;
+}
+
+.anchor {
+	position: relative;
+	display: block;
+	top: -160px;
+}
+
+.zebra-stripe {
+	background: #606060;
+}
+
+.splash-background {
+	background: #3b3838;
+}
+
+.social-icons {
+	height: 100px;
+	opacity: 0.8;
+}
+
+.icon-black {
+	color: black;
+	opacity: 0.8;
+}
+
+.info {
+	color: white;
+}
+
+.gold {
+	color: #d4b12b;
+}
+
+.mobile-brand {
+	font-family: simson;
+	font: 20px;
+	color: #d4b12b;
+	height: 20px;
+	width: 20px;
+}
+
+.navbar-brand-mobile {
+	max-height: 50px;
+	max-width: 50px;
+	margin: 15px 0px 0px 10px;
+}
+
+.shrink {
+		padding: 50px 20px;
+}
+
+.event-card {
+	height: 15em;
+  font-size: 20px;
+  width: 23em;
+  background-color: #AAA;
+  box-shadow: 0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22);
+  margin: 2em .5em;
+}
+
+#map {
+	height: 55vh;
+}
+
+		/*miller - verb first modifiers after*/
+		/*Block  - element - modifier
+		nav 		link 		blue */
+		/*when width is > 768px these styles will apply*/
+@media (min-width:768px) {
+	.navbar-nav .nav-link {
+		padding: 50px 20px;
+	}
+}
+
+@media (max-width:768px) {
+	.anchor {
+		top: -80px;
+	}
+
+	body {
+		margin: 60px 0px 0px 0px;
+	}
+}
