@@ -30,41 +30,46 @@ var $jsonp = (function(){
 
 function populatePage(json) {
   console.log(json)
-  outputColumnedMenu({
+  outputColumnedList({
     data: json.taps,
     menuType: 'cms_taps',
     min_items_for_multicolumn: 8,
+    columnsNeeded: 4,
+    enableLastUpdated: true,
     outputMenu: function(data) {
       return 'beforeend', '<li class="menu-item"><strong>'+data.beer.name+'</strong></br><small>'+" ("+data.beer.abv+"% / "+data.beer.ibu+" IBU) - "+paintThatShitGold(data.brewery.state)+'</small></li>'
     }
   })
-	outputColumnedMenu({
+	outputColumnedList({
     data: json.bottles,
-    menuType: 'bottles',
+    menuType: 'cms_bottles',
     min_items_for_multicolumn: 8,
+    columnsNeeded: 4,
+    enableLastUpdated: true,
     outputMenu: function(data){
       return 'beforeend', '<li class="menu-item"><strong>'+data.beer.name+'</strong><small>'+" - "+paintThatShitGold(data.brewery.state)+'</small></li>'
     }
   })
+  outputEvents({
+    data: json.events,
+    menuType: 'cms_events',
+    min_items_for_multicolumn: 3,
+    columnsNeeded: 3,
+    enableLastUpdated: false,
+    outputMenu: function(data) {
+      var description = data.description.length > 200 ? data.description.substring(0,300).concat("...") : data.description;
+      return "<div class='col-md-6 event-card'>"+
+          "<h3 class='menu-header-4 padding-small'><strong>"+data.title+"</strong></h3><div>"+data.event_start_date+" - "+data.event_start_time+"</div>"+
+              "<div class='menu-text'>"+description+"</div>"+
+      "</div>"
+    }
+  })
   outputCocktails(json.cocktails)
   outputWines(json.wines)
-  outputEvents(json.events)
 };
 
 function paintThatShitGold(state) {
   return state === "AZ" ? '<span class="gold">'+state+'</span>' : '<span>'+state+'</span>';
-}
-
-function outputEvents(data) {
-  for(var i = 0; i < data.length; i++) {
-    var description = data[i].description.length > 200 ? data[i].description.substring(0,300).concat("...") : data[i].description;
-    document.getElementById("content_events").insertAdjacentHTML('beforeend', (function(data) {
-      return "<div class='col-md-4'>"+
-          "<h3 class='menu-header-4 padding-small'><strong>"+data.title+"</strong></h3><div>"+data.event_start_date+" - "+data.event_start_time+"</div>"+
-              "<div class='menu-text'>"+description+"</div>"+
-      "</div>"
-    })(data[i]))
-  }
 }
 
 function outputWines(data) {
@@ -95,13 +100,50 @@ function outputCocktails(data) {
   }
 }
 
-function outputColumnedMenu(displayObject){
+function outputEvents(displayObject) {
   var itemList, menuType, min_items_for_multicolumn, columnsNeeded, nextItemToOutput, lastUpdated
 
   itemList = displayObject.data
   menuType = displayObject.menuType
   min_items_for_multicolumn = displayObject.min_items_for_multicolumn
-  columnsNeeded = 4;
+  columnsNeeded = displayObject.columnsNeeded;
+	nextItemToOutput = 0;
+
+  if(itemList.length < min_items_for_multicolumn) { columnsNeeded = 1 };
+
+	var itemsPerColumn = Math.floor(itemList.length / columnsNeeded);
+	var remainder = itemList.length % columnsNeeded
+
+	for (var columnNumber = 0; columnNumber <= columnsNeeded && nextItemToOutput < itemList.length; columnNumber++){
+		var itemsInThisColumn = itemsPerColumn;
+
+		if(remainder > 0) {
+			itemsInThisColumn++
+			remainder--
+		}
+
+    // document.getElementById(menuType).insertAdjacentHTML('beforeend', (function(){
+    //   return '<div id='+menuType+'-col-'+columnNumber+' class="col-md-12 col-centered"></div>'
+    // })())
+
+    var div = document.getElementById(menuType)
+
+		for (var j = 0; j < itemsInThisColumn && nextItemToOutput < itemList.length; j++){
+      var data = itemList[nextItemToOutput]
+			div.insertAdjacentHTML('beforeend', displayObject.outputMenu(data))
+
+			nextItemToOutput++
+		}
+  }
+}
+
+function outputColumnedList(displayObject){
+  var itemList, menuType, min_items_for_multicolumn, columnsNeeded, nextItemToOutput, lastUpdated
+
+  itemList = displayObject.data
+  menuType = displayObject.menuType
+  min_items_for_multicolumn = displayObject.min_items_for_multicolumn
+  columnsNeeded = displayObject.columnsNeeded;
 	nextItemToOutput = 0;
 	lastUpdated = '';
 
@@ -118,13 +160,13 @@ function outputColumnedMenu(displayObject){
 			remainder--
 		}
 
-		document.getElementById(menuType).insertAdjacentHTML('beforeend', (function(menuType, columnNumber){
+		document.getElementById(menuType).insertAdjacentHTML('beforeend', (function(){
       return '<div id='+menuType+'-col-'+columnNumber+' class="col-md-3"></div>'
-    })(menuType, columnNumber))
+    })())
 
-		document.getElementById(menuType+'-col-'+columnNumber).insertAdjacentHTML('beforeend', (function(menuType, columnNumber){
+		document.getElementById(menuType+'-col-'+columnNumber).insertAdjacentHTML('beforeend', (function(){
       return 'beforeend', '<ul id="'+menuType+'-ul-'+columnNumber+'"></ul>'
-    })(menuType, columnNumber))
+    })())
 
 		var ul = document.getElementById(menuType+'-ul-'+columnNumber)
 
@@ -132,17 +174,18 @@ function outputColumnedMenu(displayObject){
       var data = itemList[nextItemToOutput]
 			ul.insertAdjacentHTML('beforeend', displayObject.outputMenu(data))
 
-			if (itemList[nextItemToOutput].date_added_timestamp > lastUpdated) {
+			if (displayObject.enableLastUpdated && itemList[nextItemToOutput].date_added_timestamp > lastUpdated) {
 				lastUpdated = itemList[nextItemToOutput].date_added_timestamp
 			}
 			nextItemToOutput++
 		}
 	}
 
-	var myDate = new Date(lastUpdated*1000);
-	var lastUpdatedDate = myDate.toLocaleString();
-
-	document.getElementById(menuType+'-lastupdated').insertAdjacentHTML('beforeend',  '<div>Last updated on: <span class="gold">'+lastUpdatedDate+' MST</span></div>')
+  if(displayObject.enableLastUpdated) {
+    var myDate = new Date(lastUpdated*1000);
+    var lastUpdatedDate = myDate.toLocaleString();
+    document.getElementById(menuType+'-lastupdated').insertAdjacentHTML('beforeend',  '<div>Last updated on: <span class="gold">'+lastUpdatedDate+' MST</span></div>')
+  }
 }
 
 $jsonp.send('https://www.taphunter.com/widgets/location/v3/6729532695642112.jsonp?callback=handleCallback', {
@@ -150,7 +193,7 @@ $jsonp.send('https://www.taphunter.com/widgets/location/v3/6729532695642112.json
     onSuccess: function(json){
     	// DEBUG - console.log('successfully retrieved taphunter data!', json);
     	// This will expose the data to whole page:
-      // data = json;
+        data = json;
         populatePage(json);
     },
     onTimeout: function(){
