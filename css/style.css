@@ -114,18 +114,6 @@ ul > li {
   list-style: none;
   text-align: center; }
 
-.construction-text .construction-lead-in {
-  font-size: 20px;
-  color: #d4b12b;
-  background-color: black;
-  opacity: 0.8;
-  filter: alpha(opacity=80);
-  /* For IE8 and earlier */
-  max-width: 100%; }
-
-.construction-text a:hover {
-  text-decoration: none; }
-
 .splash-image {
   max-height: 100%;
   max-width: 100%; }

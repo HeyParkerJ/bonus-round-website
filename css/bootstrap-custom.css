@@ -2,20 +2,14 @@
     background-color: #3b3838;
 }
 
-.navbar-inverse .navbar-nav > .active > a, 
-.navbar-inverse .navbar-nav > .active > a:hover, 
+.navbar-inverse .navbar-nav > .active > a,
+.navbar-inverse .navbar-nav > .active > a:hover,
 .navbar-inverse .navbar-nav > .active > a:focus {
     background-color: #3b3838;
 }
 
 .navbar-inverse .navbar-nav > li > a {
     color: #d4b12b;
-}
-
-h1, h2, h3, h4, h5, h6 {
-    /*margin: 10px, 0px, 10px, 0px;*/
-    margin-top: 0px;
-    margin-bottom: 0px;
 }
 
 .navbar {

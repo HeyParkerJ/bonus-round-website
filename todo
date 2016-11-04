@@ -4,6 +4,8 @@ Concat text from description with ...
 Display Menu from .txt file
 Display arcades from .txt file
 Display events from Taphunter
+Add a loading icon with text about how we're dynamically live loading updates, if you're on a 2g connection, we're sorry
+	Is there a way to enable caching of this data?
 
 Look into implementing flexbox for responsive columns - would greatly clean up HTML markup
 	Need to look into usability EXTENSIVELY if we decide to do this
