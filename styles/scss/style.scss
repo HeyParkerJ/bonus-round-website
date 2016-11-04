@@ -14,16 +14,13 @@ body {
   margin: 12em 0 0 0;
 }
 
-h1, h2, h3, h4, h5, h6, p, a { 
-	text-shadow: 0px 0px 0px rgba(0,0,0,1);
-	padding: 0px;
-	margin: 0;
+.br-hero {
+  font-size: 3em;
+  text-shadow: 0 0 0 rgba(0,0,0,1);
+  font-weight: 600;
 }
 
-h1, h2 {
-	font-weight: 600;
-}
-
+// Only used on 'contact us' section to indicate link
 a.link {
 	color:white;
 	text-decoration: underline;
@@ -42,19 +39,19 @@ a.link {
 
 .menu-header-4 {
 	padding: 2%, 0, 2%, 0;
-	color: #d4b12b;
+	color: $br-gold;
 	font-size: 20px;
 }
 
 .about-header-4 {
-	color: #d4b12b;
+	color: $br-gold;
 	font-size: 20px;
 }
 
 .drink-name {
 	margin-top: .5em;
 	padding: 2%, 0, 2%, 0;
-	color: #d4b12b;
+	color: $br-gold;
 	font-size: 20px;
 }
 
@@ -68,7 +65,7 @@ a.link {
 }
 
 h1, h2, h3 {
-	color: #d4b12b;
+	color: $br-gold;
 }
 
 * {
@@ -163,13 +160,13 @@ ul > li {
 }
 
 .gold {
-	color: #d4b12b;
+	color: $br-gold;
 }
 
 .mobile-brand {
 	font-family: simson;
 	font: 20px;
-	color: #d4b12b;
+	color: $br-gold;
 	height: 20px;
 	width: 20px;
 }
