@@ -2,6 +2,7 @@
    v2.0 | 20110126
    License: none (public domain)
 */
+@import url(../vendor/bootstrap.min.css);
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -45,9 +46,42 @@ table {
   border-collapse: collapse;
   border-spacing: 0; }
 
+.navbar-inverse {
+  background-color: #3b3838; }
+
+.navbar-inverse .navbar-nav > .active > a,
+.navbar-inverse .navbar-nav > .active > a:hover,
+.navbar-inverse .navbar-nav > .active > a:focus {
+  background-color: #3b3838; }
+
+.navbar-inverse .navbar-nav > li > a {
+  color: #d4b12b; }
+
+.navbar {
+  margin-bottom: 0;
+  padding-bottom: 10px; }
+
+.navbar-logo {
+  max-height: 100px; }
+
+.navbar-nav > li > a {
+  display: flex;
+  align-items: center;
+  font-size: 18px; }
+
+.col-centered {
+  float: none;
+  margin: 0 auto; }
+
+.row-centered {
+  margin-left: 0px;
+  margin-right: 0px; }
+
+header {
+  text-align: center;
+  color: white; }
+
 body, html {
-  margin: 0px;
-  padding: 0px;
   font-size: 14px;
   font-family: 'Roboto', sans-serif;
   height: 100%;

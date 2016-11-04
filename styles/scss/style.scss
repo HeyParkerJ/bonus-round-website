@@ -1,4 +1,6 @@
 @import 'reset.scss';
+@import '../vendor/bootstrap.min.css';
+@import 'bootstrap-custom';
 
 $primary-background-color: #6b6b6b;
 $br-gold: #d4b12b;
@@ -6,8 +8,6 @@ $medium-margin: 2em 2em;
 $font-size: 14px;
 
 body, html{
-	margin: 0px;
-	padding: 0px;
   font-size: $font-size;
 	font-family: 'Roboto', sans-serif;
 	height: 100%;
