@@ -1,77 +1,225 @@
-/*
-Error: Invalid CSS after ":": expected pseudoclass or pseudoelement, was " .center"
-        on line 103 of styles/scss/style.scss
-
-98: .content-block {
-99: 	padding: 1em 0 2em 0;
-100: }
-101: 
-102: .col-centered {
-103:   @extend: .center;
-104: 	float: none;
-105:   margin: 0 auto;
-106: }
-107: 
-108: .anchor {
-
-Backtrace:
-styles/scss/style.scss:103
-/Library/Ruby/Gems/2.0.0/gems/sass-3.4.22/lib/sass/scss/parser.rb:1189:in `expected'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.4.22/lib/sass/scss/parser.rb:1125:in `expected'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.4.22/lib/sass/scss/parser.rb:1120:in `tok!'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.4.22/lib/sass/scss/static_parser.rb:276:in `pseudo'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.4.22/lib/sass/scss/static_parser.rb:153:in `simple_selector_sequence'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.4.22/lib/sass/scss/static_parser.rb:111:in `selector'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.4.22/lib/sass/scss/static_parser.rb:86:in `selector_comma_sequence'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.4.22/lib/sass/scss/parser.rb:1103:in `expr!'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.4.22/lib/sass/scss/static_parser.rb:20:in `parse_selector'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.4.22/lib/sass/tree/visitors/perform.rb:252:in `visit_extend'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.4.22/lib/sass/tree/visitors/base.rb:36:in `visit'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.4.22/lib/sass/tree/visitors/perform.rb:160:in `block in visit'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.4.22/lib/sass/stack.rb:79:in `block in with_base'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.4.22/lib/sass/stack.rb:115:in `with_frame'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.4.22/lib/sass/stack.rb:79:in `with_base'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.4.22/lib/sass/tree/visitors/perform.rb:160:in `visit'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.4.22/lib/sass/tree/visitors/perform.rb:433:in `block (2 levels) in visit_rule'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.4.22/lib/sass/tree/visitors/perform.rb:433:in `map'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.4.22/lib/sass/tree/visitors/perform.rb:433:in `block in visit_rule'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.4.22/lib/sass/tree/visitors/perform.rb:181:in `with_environment'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.4.22/lib/sass/tree/visitors/perform.rb:431:in `visit_rule'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.4.22/lib/sass/tree/visitors/base.rb:36:in `visit'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.4.22/lib/sass/tree/visitors/perform.rb:160:in `block in visit'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.4.22/lib/sass/stack.rb:79:in `block in with_base'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.4.22/lib/sass/stack.rb:115:in `with_frame'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.4.22/lib/sass/stack.rb:79:in `with_base'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.4.22/lib/sass/tree/visitors/perform.rb:160:in `visit'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.4.22/lib/sass/tree/visitors/base.rb:52:in `block in visit_children'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.4.22/lib/sass/tree/visitors/base.rb:52:in `map'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.4.22/lib/sass/tree/visitors/base.rb:52:in `visit_children'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.4.22/lib/sass/tree/visitors/perform.rb:169:in `block in visit_children'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.4.22/lib/sass/tree/visitors/perform.rb:181:in `with_environment'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.4.22/lib/sass/tree/visitors/perform.rb:168:in `visit_children'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.4.22/lib/sass/tree/visitors/base.rb:36:in `block in visit'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.4.22/lib/sass/tree/visitors/perform.rb:188:in `visit_root'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.4.22/lib/sass/tree/visitors/base.rb:36:in `visit'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.4.22/lib/sass/tree/visitors/perform.rb:159:in `visit'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.4.22/lib/sass/tree/visitors/perform.rb:8:in `visit'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.4.22/lib/sass/tree/root_node.rb:36:in `css_tree'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.4.22/lib/sass/tree/root_node.rb:29:in `render_with_sourcemap'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.4.22/lib/sass/engine.rb:381:in `_render_with_sourcemap'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.4.22/lib/sass/engine.rb:298:in `render_with_sourcemap'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.4.22/lib/sass/plugin/compiler.rb:492:in `update_stylesheet'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.4.22/lib/sass/plugin/compiler.rb:215:in `block in update_stylesheets'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.4.22/lib/sass/plugin/compiler.rb:209:in `each'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.4.22/lib/sass/plugin/compiler.rb:209:in `update_stylesheets'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.4.22/lib/sass/plugin/compiler.rb:473:in `on_file_changed'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.4.22/lib/sass/plugin/compiler.rb:331:in `block in watch'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.4.22/vendor/listen/lib/listen/listener.rb:252:in `call'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.4.22/vendor/listen/lib/listen/listener.rb:252:in `on_change'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.4.22/vendor/listen/lib/listen/listener.rb:290:in `block in initialize_adapter'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.4.22/vendor/listen/lib/listen/adapters/polling.rb:48:in `call'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.4.22/vendor/listen/lib/listen/adapters/polling.rb:48:in `poll_changed_directories'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.4.22/vendor/listen/lib/listen/adapter.rb:299:in `block in start_poller'
+/* http://meyerweb.com/eric/tools/css/reset/
+   v2.0 | 20110126
+   License: none (public domain)
 */
-body:before {
-  white-space: pre;
-  font-family: monospace;
-  content: "Error: Invalid CSS after \":\": expected pseudoclass or pseudoelement, was \" .center\"\A         on line 103 of styles/scss/style.scss\A \A 98: .content-block {\A 99: 	padding: 1em 0 2em 0;\A 100: }\A 101: \A 102: .col-centered {\A 103:   @extend: .center;\A 104: 	float: none;\A 105:   margin: 0 auto;\A 106: }\A 107: \A 108: .anchor {"; }
+@import url(../vendor/bootstrap.min.css);
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline; }
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block; }
+
+body {
+  line-height: 1; }
+
+ol, ul, li {
+  list-style: none; }
+
+blockquote, q {
+  quotes: none; }
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none; }
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+.navbar-inverse {
+  background-color: #3b3838; }
+
+.navbar-inverse .navbar-nav > .active > a,
+.navbar-inverse .navbar-nav > .active > a:hover,
+.navbar-inverse .navbar-nav > .active > a:focus {
+  background-color: #3b3838; }
+
+.navbar-inverse .navbar-nav > li > a {
+  color: #d4b12b; }
+
+.navbar-logo {
+  max-height: 5.3em; }
+
+.navbar-nav > li > a {
+  display: flex;
+  align-items: center;
+  font-size: 1.4em; }
+
+.col-centered {
+  float: none;
+  margin: 0 auto; }
+
+.row-centered {
+  margin-left: 0px;
+  margin-right: 0px; }
+
+header {
+  text-align: center;
+  color: white; }
+
+body, html {
+  font-size: 14px;
+  font-family: 'Roboto', sans-serif;
+  height: 100%;
+  background-color: #6b6b6b; }
+
+body {
+  margin: 12em 0 0 0; }
+
+.br-hero {
+  font-size: 3em;
+  text-shadow: 0 0 0 black;
+  font-weight: 600; }
+
+a.link {
+  color: #f8f6f6;
+  text-decoration: underline; }
+
+.header, .menu-header {
+  color: #d4b12b; }
+
+.menu-header {
+  margin: 1em 0;
+  font-weight: 500;
+  font-size: 2em;
+  text-align: center; }
+
+.menu-content {
+  margin: .5em;
+  color: #f8f6f6;
+  font-weight: 100; }
+
+.about-header-4 {
+  color: #d4b12b;
+  font-size: 20px; }
+
+.drink-name {
+  margin-top: .5em;
+  padding: 2%, 0, 2%, 0;
+  color: #d4b12b;
+  font-size: 20px; }
+
+h1, h2, h3 {
+  color: #d4b12b; }
+
+* {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box; }
+
+.center, .col-centered {
+  text-align: center; }
+
+.splash-image {
+  max-height: 100%;
+  max-width: 100%; }
+
+.text-block {
+  color: #f8f6f6;
+  font-size: 1.2em;
+  line-height: 2em;
+  font-weight: 100;
+  font-style: normal;
+  letter-spacing: .015em; }
+
+.small-text, .flavor-text {
+  color: #f8f6f6;
+  font-size: .5em;
+  line-height: 2em; }
+
+.flavor-text {
+  color: #d4b12b; }
+
+.content-block {
+  padding: 1em 0 2em 0; }
+
+.col-centered {
+  float: none;
+  margin: 0 auto; }
+
+.anchor {
+  position: relative;
+  display: block;
+  top: -160px; }
+
+.zebra-stripe {
+  background: #606060; }
+
+.splash-background {
+  background: #3b3838; }
+
+.social-icons {
+  height: 100px;
+  opacity: 0.8; }
+
+.icon-black {
+  color: black;
+  opacity: 0.8; }
+
+.info {
+  color: white; }
+
+.gold {
+  color: #d4b12b; }
+
+.mobile-brand {
+  font-family: simson;
+  font: 20px;
+  color: #d4b12b;
+  height: 20px;
+  width: 20px; }
+
+.navbar-brand-mobile {
+  max-height: 50px;
+  max-width: 50px;
+  margin: 15px 0px 0px 10px; }
+
+.shrink {
+  padding: 50px 20px; }
+
+.event-card {
+  height: 15em;
+  font-size: 20px;
+  width: 23em;
+  background-color: #AAA;
+  box-shadow: 0 19px 38px rgba(0, 0, 0, 0.3), 0 15px 12px rgba(0, 0, 0, 0.22);
+  margin: 2em .5em; }
+
+#map {
+  height: 55vh; }
+
+/*miller - verb first modifiers after*/
+/*Block  - element - modifier
+nav 		link 		blue */
+/*when width is > 768px these styles will apply*/
+@media (min-width: 768px) {
+  .navbar-nav .nav-link {
+    padding: 50px 20px; } }
+@media (max-width: 768px) {
+  .anchor {
+    top: -80px; }
+
+  body {
+    margin: 60px 0px 0px 0px; } }
+
+/*# sourceMappingURL=style.css.map */

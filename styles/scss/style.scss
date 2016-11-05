@@ -100,7 +100,7 @@ h1, h2, h3 {
 }
 
 .col-centered {
-  @extend: .center;
+  @extend .center;
 	float: none;
   margin: 0 auto;
 }
