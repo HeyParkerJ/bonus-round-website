@@ -7,7 +7,7 @@ body, html {
   font-size: $font-size;
 	font-family: 'Roboto', sans-serif;
 	height: 100%;
-	background-color: $primary-background-color;
+	background-color: $background-color;
 }
 
 body {
@@ -36,6 +36,12 @@ a.link {
 	font-weight: 500;
 	font-size: 2em;
 	text-align: center;
+}
+
+.menu-content {
+  margin: .5em;
+  color: $white-text;
+  font-weight: 100;
 }
 
 .about-header-4 {
@@ -90,21 +96,13 @@ h1, h2, h3 {
 }
 
 .content-block {
-	padding: 2%, 0, 2%, 0;
-}
-
-.padding-medium {
-	padding-top: 5%;
+	padding: 1em 0 2em 0;
 }
 
 .col-centered {
+  @extend: .center;
 	float: none;
-    margin: 0 auto;
-    text-align: center;
-}
-
-.games-text > ul > li {
-	font: 20px;
+  margin: 0 auto;
 }
 
 .anchor {
@@ -114,7 +112,7 @@ h1, h2, h3 {
 }
 
 .zebra-stripe {
-	background: #606060;
+	background: $secondary-color;
 }
 
 .splash-background {
