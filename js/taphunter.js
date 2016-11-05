@@ -184,7 +184,7 @@ function outputColumnedList(displayObject){
   if(displayObject.enableLastUpdated) {
     var myDate = new Date(lastUpdated*1000);
     var lastUpdatedDate = myDate.toLocaleString();
-    document.getElementById(menuType+'-lastupdated').insertAdjacentHTML('beforeend',  '<div>Last updated on: <span class="gold">'+lastUpdatedDate+' MST</span></div>')
+    document.getElementById(menuType+'-lastupdated').insertAdjacentHTML('beforeend',  '<div class="flavor-text">Last updated on: <span class="gold">'+lastUpdatedDate+' MST</span></div>')
   }
 }
 
