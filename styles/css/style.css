@@ -92,10 +92,10 @@ body {
   font-weight: 600; }
 
 a.link {
-  color: white;
+  color: #f8f6f6;
   text-decoration: underline; }
 
-.menu-header {
+.header, .menu-header-3 {
   color: #d4b12b; }
 
 .menu-header-3 {
@@ -134,9 +134,6 @@ h1, h2, h3 {
   -webkit-box-sizing: border-box;
   box-sizing: border-box; }
 
-ul {
-  padding: 0; }
-
 ul > li {
   list-style: none;
   text-align: center; }
@@ -145,10 +142,9 @@ ul > li {
   max-height: 100%;
   max-width: 100%; }
 
-.menu-text {
+.text-block {
   color: #f8f6f6;
-  font-family: 'Open Sans', sans-serif;
-  font-size: 16px;
+  font-size: 1.2em;
   line-height: 2em;
   font-weight: 100;
   font-style: normal;
@@ -156,15 +152,7 @@ ul > li {
 
 .small-text {
   color: #f8f6f6;
-  font-family: 'Open Sans', sans-serif;
-  font-size: 14px;
-  line-height: 2em;
-  font-weight: 50;
-  font-style: normal;
-  letter-spacing: .015em; }
-
-.aboutus-text {
-  color: #f8f6f6;
+  font-size: 1em;
   line-height: 2em; }
 
 .content-block {

@@ -22,15 +22,16 @@ body {
 
 // Only used on 'contact us' section to indicate link
 a.link {
-	color:white;
+	color: $white-text;
 	text-decoration: underline;
 }
 
-.menu-header {
-	color: $br-gold;
+.header {
+  color: $br-gold;
 }
 
 .menu-header-3 {
+  @extend .header;
 	padding: 2%, 0, 2%, 0;
 	font-weight: 500;
 	font-size: 30px;
@@ -74,10 +75,6 @@ h1, h2, h3 {
 	box-sizing: border-box;
 }
 
-ul {
-	padding: 0;
-}
-
 ul > li {
 	list-style: none;
 	text-align: center;
@@ -88,10 +85,9 @@ ul > li {
 	max-width: 100%;
 }
 
-.menu-text{
-	color: #f8f6f6;
-	font-family: 'Open Sans', sans-serif;
-	font-size: 16px;
+.text-block{
+	color: $white-text;
+	font-size: 1.2em;
 	line-height: 2em;
 	font-weight: 100;
 	font-style: normal;
@@ -100,16 +96,7 @@ ul > li {
 
 .small-text{
 	color: #f8f6f6;
-	font-family: 'Open Sans', sans-serif;
-	font-size: 14px;
-	line-height: 2em;
-	font-weight: 50;
-	font-style: normal;
-	letter-spacing: .015em;
-}
-
-.aboutus-text {
-	color: #f8f6f6;
+	font-size: 1em;
 	line-height: 2em;
 }
 
