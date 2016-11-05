@@ -30,18 +30,12 @@ a.link {
   color: $br-gold;
 }
 
-.menu-header-3 {
+.menu-header {
   @extend .header;
-	padding: 2%, 0, 2%, 0;
+	padding: 1em, 0;
 	font-weight: 500;
-	font-size: 30px;
+	font-size: 2em;
 	text-align: center;
-}
-
-.menu-header-4 {
-	padding: 2%, 0, 2%, 0;
-	color: $br-gold;
-	font-size: 20px;
 }
 
 .about-header-4 {
@@ -54,15 +48,6 @@ a.link {
 	padding: 2%, 0, 2%, 0;
 	color: $br-gold;
 	font-size: 20px;
-}
-
-.padding-small {
-	padding-top: 2%;
-	padding-bottom: 2%;
-}
-
-.padding-small-bottom {
-	padding-bottom: 2%;
 }
 
 h1, h2, h3 {

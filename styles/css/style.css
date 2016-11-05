@@ -95,19 +95,14 @@ a.link {
   color: #f8f6f6;
   text-decoration: underline; }
 
-.header, .menu-header-3 {
+.header, .menu-header {
   color: #d4b12b; }
 
-.menu-header-3 {
-  padding: 2%, 0, 2%, 0;
+.menu-header {
+  padding: 1em, 0;
   font-weight: 500;
-  font-size: 30px;
+  font-size: 2em;
   text-align: center; }
-
-.menu-header-4 {
-  padding: 2%, 0, 2%, 0;
-  color: #d4b12b;
-  font-size: 20px; }
 
 .about-header-4 {
   color: #d4b12b;
@@ -118,13 +113,6 @@ a.link {
   padding: 2%, 0, 2%, 0;
   color: #d4b12b;
   font-size: 20px; }
-
-.padding-small {
-  padding-top: 2%;
-  padding-bottom: 2%; }
-
-.padding-small-bottom {
-  padding-bottom: 2%; }
 
 h1, h2, h3 {
   color: #d4b12b; }
