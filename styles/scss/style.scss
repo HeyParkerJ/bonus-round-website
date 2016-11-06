@@ -14,13 +14,16 @@ body {
   margin: 12em 0 0 0;
 }
 
+.content-block {
+	padding: 1em 0 2em 0;
+}
+
 .br-hero {
   font-size: 3em;
   text-shadow: 0 0 0 rgba(0,0,0,1);
   font-weight: 600;
 }
 
-// Only used on 'contact us' section to indicate link
 a.link {
 	color: $white;
 	text-decoration: underline;
@@ -32,29 +35,29 @@ a.link {
 
 .menu-header {
   @extend .gold;
+  font-size: 2em;
 	margin: 1em 0;
 	font-weight: 500;
-	font-size: 2em;
 }
 
 .menu-header-minor {
   @extend .gold;
-	margin: .5em 0 .25em 0;
   font-size: 1.5em;
+	margin: 1em 0 .25em 0;
 }
 
 .menu-content {
   color: $white;
-  margin: 1em 0;
-  font-weight: 100;
   font-size: 1.2em;
+  margin: 1em 0;
   line-height: 1.5em;
+  font-weight: 100;
 }
 
 .menu-content-strong {
   @extend .menu-content;
-  line-height: 1.8em;
   font-size: 1.7em;
+  line-height: 1.8em;
   font-weight: 400;
 }
 
@@ -64,18 +67,30 @@ a.link {
   margin: -1.5em 0 0 0;
 }
 
-h1, h2, h3 {
-	color: $br-gold;
+.menu-flavor-minor {
+  color: $white;
+  font-size: 1em;
+  margin: -.25em 0 0 0;
 }
 
-* {
-	-moz-box-sizing: border-box;
-	-webkit-box-sizing: border-box;
-	box-sizing: border-box;
+
+// HACKS
+.nopad {
+  padding: 0;
+}
+
+.offset-up{
+  margin: -1em 0 0 0;
 }
 
 .center {
   text-align: center;
+}
+
+.col-centered {
+  @extend .center;
+	float: none;
+  margin: 0 auto;
 }
 
 .splash-image {
@@ -90,22 +105,6 @@ h1, h2, h3 {
 	font-weight: 100;
 	font-style: normal;
 	letter-spacing: .015em;
-}
-
-.small-text{
-	color: #f8f6f6;
-	font-size: .5em;
-	line-height: 2em;
-}
-
-.content-block {
-	padding: 1em 0 2em 0;
-}
-
-.col-centered {
-  @extend .center;
-	float: none;
-  margin: 0 auto;
 }
 
 .anchor {
