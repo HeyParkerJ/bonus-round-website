@@ -57,8 +57,16 @@ function populatePage(json) {
     enableLastUpdated: false,
     outputMenu: function(data, param) {
       var description = data.description.length > 200 ? data.description.substring(0,300).concat("...") : data.description;
-      return "<div class='card'><div class='card-header'><h3 class='card-title'>"+data.title+"</h3><div class='card-flavor'>"+data.event_start_date+" - "+data.event_start_time+"</div></div>"+
-              "<div class='card-content'>"+description+"</div><div class='card-footer'><a class='link' href="+data.link+">Read on Facebook</a></div>"
+      return "<div class='card-entire'>"
+                +"<div class='card-topper'>"
+                  +"<div class='card-header'>"
+                    +"<h3 class='card-title'>"+data.title+"</h3>"
+                      +"<div class='card-flavor'>"+data.event_start_date+" - "+data.event_start_time+"</div>"
+                  +"</div>"
+                  +"<div class='card-content'>"+description+"</div>"
+                +"</div>"
+              +"<div class='card-footer'><a class='link' href="+data.link+">Read on Facebook</a></div>"
+              +"</div>"
     }
   })
   outputCocktails(json.cocktails)

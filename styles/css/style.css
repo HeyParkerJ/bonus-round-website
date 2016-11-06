@@ -133,16 +133,20 @@ a.link {
   font-size: 1em;
   margin: -.25em 0 0 0; }
 
-.card {
+.card-entire {
   height: 27em;
-  font-size: 1rem;
-  background-color: #606060;
+  background-color: #6b6b6b;
   box-shadow: 0 19px 38px rgba(0, 0, 0, 0.3), 0 15px 12px rgba(0, 0, 0, 0.22);
+  font-size: 1rem;
   margin: 2em .5em; }
+
+.card-topper {
+  background-color: #6b6b6b;
+  height: 25em; }
 
 .card-header {
   min-height: 5em;
-  background-color: black;
+  background-color: #3b3838;
   padding: .25em;
   border-bottom: thin solid #f8f6f6; }
 
@@ -166,7 +170,8 @@ a.link {
   font-weight: 100; }
 
 .card-footer {
-  color: #d4b12b; }
+  color: #d4b12b;
+  font-size: 1.2em; }
 
 .nopad {
   padding: 0; }

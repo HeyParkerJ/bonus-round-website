@@ -74,17 +74,22 @@ a.link {
   margin: -.25em 0 0 0;
 }
 
-.card {
+.card-entire {
   height: 27em;
-  font-size: 1rem;
-  background-color: $secondary-color;
+  background-color: $background-color;
   box-shadow: 0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22);
+  font-size: 1rem;
   margin: 2em .5em;
+}
+
+.card-topper {
+  background-color: $background-color;
+  height: 25em;
 }
 
 .card-header {
   min-height: 5em;
-  background-color: black;
+  background-color: $primary-color;
   padding: .25em;
   border-bottom: thin solid $white;
 }
@@ -114,6 +119,7 @@ a.link {
 
 .card-footer {
   color: $br-gold;
+  font-size: 1.2em;
 }
 
 // HACKS
