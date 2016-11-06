@@ -95,29 +95,34 @@ a.link {
   color: #f8f6f6;
   text-decoration: underline; }
 
-.header, .menu-header {
+.gold, .menu-header, .menu-header-minor {
   color: #d4b12b; }
 
 .menu-header {
   margin: 1em 0;
   font-weight: 500;
-  font-size: 2em;
-  text-align: center; }
+  font-size: 2em; }
 
-.menu-content {
-  margin: .5em;
+.menu-header-minor {
+  margin: .5em 0 .25em 0;
+  font-size: 1.5em; }
+
+.menu-content, .menu-content-strong {
   color: #f8f6f6;
-  font-weight: 100; }
+  margin: 1em 0;
+  font-weight: 100;
+  font-size: 1.2em;
+  line-height: 1.5em; }
 
-.about-header-4 {
-  color: #d4b12b;
-  font-size: 20px; }
+.menu-content-strong {
+  line-height: 1.8em;
+  font-size: 1.7em;
+  font-weight: 400; }
 
-.drink-name {
-  margin-top: .5em;
-  padding: 2%, 0, 2%, 0;
-  color: #d4b12b;
-  font-size: 20px; }
+.menu-flavor {
+  color: #f8f6f6;
+  font-size: 1em;
+  margin: -1.5em 0 0 0; }
 
 h1, h2, h3 {
   color: #d4b12b; }
@@ -129,6 +134,9 @@ h1, h2, h3 {
 
 .center, .col-centered {
   text-align: center; }
+
+.nopad {
+  padding: 0; }
 
 .splash-image {
   max-height: 100%;
@@ -142,13 +150,10 @@ h1, h2, h3 {
   font-style: normal;
   letter-spacing: .015em; }
 
-.small-text, .flavor-text {
+.small-text {
   color: #f8f6f6;
   font-size: .5em;
   line-height: 2em; }
-
-.flavor-text {
-  color: #d4b12b; }
 
 .content-block {
   padding: 1em 0 2em 0; }
@@ -178,9 +183,6 @@ h1, h2, h3 {
 
 .info {
   color: white; }
-
-.gold {
-  color: #d4b12b; }
 
 .mobile-brand {
   font-family: simson;

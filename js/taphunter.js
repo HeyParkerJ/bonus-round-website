@@ -36,7 +36,7 @@ function populatePage(json) {
     min_items_for_multicolumn: 8,
     columnsNeeded: 4,
     enableLastUpdated: true,
-    outputMenu: function(data) {
+    outputMenu: function(data, param) {
       return 'beforeend', '<li class="menu-item"><strong>'+data.beer.name+'</strong></br><small>'+" ("+data.beer.abv+"% / "+data.beer.ibu+" IBU) - "+paintThatShitGold(data.brewery.state)+'</small></li>'
     }
   })
@@ -46,7 +46,7 @@ function populatePage(json) {
     min_items_for_multicolumn: 8,
     columnsNeeded: 4,
     enableLastUpdated: true,
-    outputMenu: function(data){
+    outputMenu: function(data, param){
       return 'beforeend', '<li class="menu-item"><strong>'+data.beer.name+'</strong><small>'+" - "+paintThatShitGold(data.brewery.state)+'</small></li>'
     }
   })
@@ -56,7 +56,7 @@ function populatePage(json) {
     min_items_for_multicolumn: 3,
     columnsNeeded: 3,
     enableLastUpdated: false,
-    outputMenu: function(data) {
+    outputMenu: function(data, param) {
       var description = data.description.length > 200 ? data.description.substring(0,300).concat("...") : data.description;
       return "<div class='col-md-6 event-card'>"+
           "<h3 class='menu-header-4 padding-small'><strong>"+data.title+"</strong></h3><div>"+data.event_start_date+" - "+data.event_start_time+"</div>"+
@@ -77,7 +77,7 @@ function outputWines(data) {
   var RedsUlElement = document.getElementById("content_reds");
 
   outputLi = function(data) {
-    return "<li>"+data.name+" - "+data.type_name+"</li>";
+    return "<div>"+data.name+"</div>";
   }
 
   for (var i = 0; i < data.length; i++) {
@@ -95,7 +95,7 @@ function outputCocktails(data) {
 
   for (var i = 0; i < data.length; i++) {
     cocktailUlElement.insertAdjacentHTML('beforeend', function(data) {
-      return "<li><p class='drink-name'>"+data.name+"</p>"+data.ingredients.string+"</li>"
+      return "<li><p class='menu-header-minor'>"+data.name+"</p>"+data.ingredients.string+"</li>"
     }(data[i]))
   }
 }
@@ -121,10 +121,6 @@ function outputEvents(displayObject) {
 			itemsInThisColumn++
 			remainder--
 		}
-
-    // document.getElementById(menuType).insertAdjacentHTML('beforeend', (function(){
-    //   return '<div id='+menuType+'-col-'+columnNumber+' class="col-md-12 col-centered"></div>'
-    // })())
 
     var div = document.getElementById(menuType)
 
@@ -172,7 +168,7 @@ function outputColumnedList(displayObject){
 
 		for (var j = 0; j < itemsInThisColumn && nextItemToOutput < itemList.length; j++){
       var data = itemList[nextItemToOutput]
-			ul.insertAdjacentHTML('beforeend', displayObject.outputMenu(data))
+			ul.insertAdjacentHTML('beforeend', displayObject.outputMenu(data, nextItemToOutput))
 
 			if (displayObject.enableLastUpdated && itemList[nextItemToOutput].date_added_timestamp > lastUpdated) {
 				lastUpdated = itemList[nextItemToOutput].date_added_timestamp
@@ -184,7 +180,7 @@ function outputColumnedList(displayObject){
   if(displayObject.enableLastUpdated) {
     var myDate = new Date(lastUpdated*1000);
     var lastUpdatedDate = myDate.toLocaleString();
-    document.getElementById(menuType+'-lastupdated').insertAdjacentHTML('beforeend',  '<div class="flavor-text">Last updated on: <span class="gold">'+lastUpdatedDate+' MST</span></div>')
+    document.getElementById(menuType+'-lastupdated').insertAdjacentHTML('beforeend',  '<div class="menu-flavor">Last updated on: <span class="gold">'+lastUpdatedDate+' MST</span></div>')
   }
 }
 

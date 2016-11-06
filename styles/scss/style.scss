@@ -22,38 +22,46 @@ body {
 
 // Only used on 'contact us' section to indicate link
 a.link {
-	color: $white-text;
+	color: $white;
 	text-decoration: underline;
 }
 
-.header {
+.gold {
   color: $br-gold;
 }
 
 .menu-header {
-  @extend .header;
+  @extend .gold;
 	margin: 1em 0;
 	font-weight: 500;
 	font-size: 2em;
-	text-align: center;
+}
+
+.menu-header-minor {
+  @extend .gold;
+	margin: .5em 0 .25em 0;
+  font-size: 1.5em;
 }
 
 .menu-content {
-  margin: .5em;
-  color: $white-text;
+  color: $white;
+  margin: 1em 0;
   font-weight: 100;
+  font-size: 1.2em;
+  line-height: 1.5em;
 }
 
-.about-header-4 {
-	color: $br-gold;
-	font-size: 20px;
+.menu-content-strong {
+  @extend .menu-content;
+  line-height: 1.8em;
+  font-size: 1.7em;
+  font-weight: 400;
 }
 
-.drink-name {
-	margin-top: .5em;
-	padding: 2%, 0, 2%, 0;
-	color: $br-gold;
-	font-size: 20px;
+.menu-flavor {
+  color: $white;
+  font-size: 1em;
+  margin: -1.5em 0 0 0;
 }
 
 h1, h2, h3 {
@@ -70,13 +78,17 @@ h1, h2, h3 {
   text-align: center;
 }
 
+.nopad {
+  padding: 0;
+}
+
 .splash-image {
 	max-height: 100%;
 	max-width: 100%;
 }
 
 .text-block{
-	color: $white-text;
+	color: $white;
 	font-size: 1.2em;
 	line-height: 2em;
 	font-weight: 100;
@@ -88,11 +100,6 @@ h1, h2, h3 {
 	color: #f8f6f6;
 	font-size: .5em;
 	line-height: 2em;
-}
-
-.flavor-text {
-  @extend .small-text;
-  color: $br-gold;
 }
 
 .content-block {
@@ -131,10 +138,6 @@ h1, h2, h3 {
 
 .info {
 	color: white;
-}
-
-.gold {
-	color: $br-gold;
 }
 
 .mobile-brand {
