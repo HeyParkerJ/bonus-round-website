@@ -29,7 +29,6 @@ var $jsonp = (function(){
 })();
 
 function populatePage(json) {
-  console.log(json)
   outputColumnedList({
     data: json.taps,
     menuType: 'cms_taps',
@@ -37,7 +36,7 @@ function populatePage(json) {
     columnsNeeded: 4,
     enableLastUpdated: true,
     outputMenu: function(data, param) {
-      return 'beforeend', '<li class="menu-item"><strong>'+data.beer.name+'</strong></br><small>'+" ("+data.beer.abv+"% / "+data.beer.ibu+" IBU) - "+paintThatShitGold(data.brewery.state)+'</small></li>'
+      return 'beforeend', '<li><div<strong>'+data.beer.name+'</strong></br><small>'+" ("+data.beer.abv+"% / "+data.beer.ibu+" IBU) - "+paintThatShitGold(data.brewery.state)+'</small></li>'
     }
   })
 	outputColumnedList({
@@ -47,7 +46,7 @@ function populatePage(json) {
     columnsNeeded: 4,
     enableLastUpdated: true,
     outputMenu: function(data, param){
-      return 'beforeend', '<li class="menu-item"><strong>'+data.beer.name+'</strong><small>'+" - "+paintThatShitGold(data.brewery.state)+'</small></li>'
+      return 'beforeend', '<li><strong>'+data.beer.name+'</strong><small>'+" - "+paintThatShitGold(data.brewery.state)+'</small></li>'
     }
   })
   outputEvents({
@@ -58,10 +57,8 @@ function populatePage(json) {
     enableLastUpdated: false,
     outputMenu: function(data, param) {
       var description = data.description.length > 200 ? data.description.substring(0,300).concat("...") : data.description;
-      return "<div class='col-md-6 event-card'>"+
-          "<h3 class='menu-header-4 padding-small'><strong>"+data.title+"</strong></h3><div>"+data.event_start_date+" - "+data.event_start_time+"</div>"+
-              "<div class='menu-text'>"+description+"</div>"+
-      "</div>"
+      return "<div class='card'><div class='card-header'><h3 class='card-title'>"+data.title+"</h3><div class='card-flavor'>"+data.event_start_date+" - "+data.event_start_time+"</div></div>"+
+              "<div class='card-content'>"+description+"</div><div class='card-footer'><a class='link' href="+data.link+">Read on Facebook</a></div>"
     }
   })
   outputCocktails(json.cocktails)
@@ -122,7 +119,15 @@ function outputEvents(displayObject) {
 			remainder--
 		}
 
-    var div = document.getElementById(menuType)
+    document.getElementById(menuType).insertAdjacentHTML('beforeend', (function(){
+      return '<div id='+menuType+'-col-'+columnNumber+' class="col-md-4"></div>'
+    })())
+
+    document.getElementById(menuType+'-col-'+columnNumber).insertAdjacentHTML('beforeend', (function(){
+      return 'beforeend', '<div id="'+menuType+'-div-'+columnNumber+'></div>'
+    })())
+
+    var div = document.getElementById(menuType+'-col-'+columnNumber)
 
 		for (var j = 0; j < itemsInThisColumn && nextItemToOutput < itemList.length; j++){
       var data = itemList[nextItemToOutput]

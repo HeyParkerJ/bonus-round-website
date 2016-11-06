@@ -19,13 +19,14 @@ body {
 }
 
 .br-hero {
+  color: $br-gold;
   font-size: 3em;
   text-shadow: 0 0 0 rgba(0,0,0,1);
   font-weight: 600;
 }
 
 a.link {
-	color: $white;
+	color: $br-gold;
 	text-decoration: underline;
 }
 
@@ -73,6 +74,47 @@ a.link {
   margin: -.25em 0 0 0;
 }
 
+.card {
+  height: 27em;
+  font-size: 1rem;
+  background-color: $secondary-color;
+  box-shadow: 0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22);
+  margin: 2em .5em;
+}
+
+.card-header {
+  min-height: 5em;
+  background-color: black;
+  padding: .25em;
+  border-bottom: thin solid $white;
+}
+
+.card-title {
+  @extend .gold;
+  top: 50%;
+  position: relative;
+  font-size: 2em;
+  font-weight: 500;
+  overflow: ellipsis;
+}
+
+.card-flavor {
+  color: $white;
+  font-size: 1em;
+  margin: .5em 0 .25em 0;
+}
+
+.card-content {
+  color: $white;
+  font-size: 1.2em;
+  margin: 1em 0;
+  line-height: 1.5em;
+  font-weight: 100;
+}
+
+.card-footer {
+  color: $br-gold;
+}
 
 // HACKS
 .nopad {
@@ -85,12 +127,6 @@ a.link {
 
 .center {
   text-align: center;
-}
-
-.col-centered {
-  @extend .center;
-	float: none;
-  margin: 0 auto;
 }
 
 .splash-image {
@@ -117,10 +153,6 @@ a.link {
 	background: $secondary-color;
 }
 
-.splash-background {
-	background: #3b3838;
-}
-
 .social-icons {
 	height: 100px;
 	opacity: 0.8;
@@ -129,10 +161,6 @@ a.link {
 .icon-black {
 	color: black;
 	opacity: 0.8;
-}
-
-.info {
-	color: white;
 }
 
 .mobile-brand {
@@ -149,17 +177,10 @@ a.link {
 	margin: 15px 0px 0px 10px;
 }
 
+
+// Up for deletion
 .shrink {
 		padding: 50px 20px;
-}
-
-.event-card {
-	height: 15em;
-  font-size: 20px;
-  width: 23em;
-  background-color: #AAA;
-  box-shadow: 0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22);
-  margin: 2em .5em;
 }
 
 #map {

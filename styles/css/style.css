@@ -90,15 +90,16 @@ body {
   padding: 1em 0 2em 0; }
 
 .br-hero {
+  color: #d4b12b;
   font-size: 3em;
   text-shadow: 0 0 0 black;
   font-weight: 600; }
 
 a.link {
-  color: #f8f6f6;
+  color: #d4b12b;
   text-decoration: underline; }
 
-.gold, .menu-header, .menu-header-minor {
+.gold, .menu-header, .menu-header-minor, .card-title {
   color: #d4b12b; }
 
 .menu-header {
@@ -132,18 +133,49 @@ a.link {
   font-size: 1em;
   margin: -.25em 0 0 0; }
 
+.card {
+  height: 27em;
+  font-size: 1rem;
+  background-color: #606060;
+  box-shadow: 0 19px 38px rgba(0, 0, 0, 0.3), 0 15px 12px rgba(0, 0, 0, 0.22);
+  margin: 2em .5em; }
+
+.card-header {
+  min-height: 5em;
+  background-color: black;
+  padding: .25em;
+  border-bottom: thin solid #f8f6f6; }
+
+.card-title {
+  top: 50%;
+  position: relative;
+  font-size: 2em;
+  font-weight: 500;
+  overflow: ellipsis; }
+
+.card-flavor {
+  color: #f8f6f6;
+  font-size: 1em;
+  margin: .5em 0 .25em 0; }
+
+.card-content {
+  color: #f8f6f6;
+  font-size: 1.2em;
+  margin: 1em 0;
+  line-height: 1.5em;
+  font-weight: 100; }
+
+.card-footer {
+  color: #d4b12b; }
+
 .nopad {
   padding: 0; }
 
 .offset-up {
   margin: -1em 0 0 0; }
 
-.center, .col-centered {
+.center {
   text-align: center; }
-
-.col-centered {
-  float: none;
-  margin: 0 auto; }
 
 .splash-image {
   max-height: 100%;
@@ -165,9 +197,6 @@ a.link {
 .zebra-stripe {
   background: #606060; }
 
-.splash-background {
-  background: #3b3838; }
-
 .social-icons {
   height: 100px;
   opacity: 0.8; }
@@ -175,9 +204,6 @@ a.link {
 .icon-black {
   color: black;
   opacity: 0.8; }
-
-.info {
-  color: white; }
 
 .mobile-brand {
   font-family: simson;
@@ -193,14 +219,6 @@ a.link {
 
 .shrink {
   padding: 50px 20px; }
-
-.event-card {
-  height: 15em;
-  font-size: 20px;
-  width: 23em;
-  background-color: #AAA;
-  box-shadow: 0 19px 38px rgba(0, 0, 0, 0.3), 0 15px 12px rgba(0, 0, 0, 0.22);
-  margin: 2em .5em; }
 
 #map {
   height: 55vh; }
