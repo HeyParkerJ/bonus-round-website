@@ -2,7 +2,6 @@
    v2.0 | 20110126
    License: none (public domain)
 */
-@import url(../vendor/bootstrap.min.css);
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -81,9 +80,11 @@ body {
 .content-block {
   padding: 1em 0 2em 0; }
 
+.font-medium {
+  font-size: 1.2em; }
+
 .text-block {
   color: #f8f6f6;
-  font-size: 1.2em;
   line-height: 2em;
   font-weight: 100;
   font-style: normal;
@@ -113,7 +114,6 @@ body {
 
 .menu-content, .menu-content-strong {
   color: #f8f6f6;
-  font-size: 1.2em;
   margin: 1em 0;
   line-height: 1.5em;
   font-weight: 100; }
@@ -160,14 +160,12 @@ body {
 
 .card-content {
   color: #f8f6f6;
-  font-size: 1.2em;
   margin: 1em 0;
   line-height: 1.5em;
   font-weight: 100; }
 
 .card-footer {
-  color: #d4b12b;
-  font-size: 1.2em; }
+  color: #d4b12b; }
 
 .nopad {
   padding: 0; }
@@ -203,7 +201,7 @@ body {
   max-width: 3.5em;
   margin: .75em 0 0 .5em; }
 
-#map {
+.map {
   height: 55vh; }
 
 /*miller - verb first modifiers after*/
@@ -218,6 +216,6 @@ nav 		link 		blue */
     top: -80px; }
 
   body {
-    margin: 60px 0px 0px 0px; } }
+    margin: 60px 0 0 0; } }
 
 /*# sourceMappingURL=style.css.map */
