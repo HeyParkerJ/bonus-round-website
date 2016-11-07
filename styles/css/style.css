@@ -69,14 +69,6 @@ table {
   float: none;
   margin: 0 auto; }
 
-.row-centered {
-  margin-left: 0px;
-  margin-right: 0px; }
-
-header {
-  text-align: center;
-  color: white; }
-
 body, html {
   font-size: 14px;
   font-family: 'Roboto', sans-serif;
@@ -89,13 +81,21 @@ body {
 .content-block {
   padding: 1em 0 2em 0; }
 
+.text-block {
+  color: #f8f6f6;
+  font-size: 1.2em;
+  line-height: 2em;
+  font-weight: 100;
+  font-style: normal;
+  letter-spacing: .015em; }
+
 .br-hero {
   color: #d4b12b;
   font-size: 3em;
   text-shadow: 0 0 0 black;
   font-weight: 600; }
 
-a.link {
+.link {
   color: #d4b12b;
   text-decoration: underline; }
 
@@ -125,19 +125,16 @@ a.link {
 
 .menu-flavor {
   color: #f8f6f6;
-  font-size: 1em;
   margin: -1.5em 0 0 0; }
 
 .menu-flavor-minor {
   color: #f8f6f6;
-  font-size: 1em;
   margin: -.25em 0 0 0; }
 
 .card-entire {
   height: 27em;
   background-color: #6b6b6b;
   box-shadow: 0 19px 38px rgba(0, 0, 0, 0.3), 0 15px 12px rgba(0, 0, 0, 0.22);
-  font-size: 1rem;
   margin: 2em .5em; }
 
 .card-topper {
@@ -155,11 +152,10 @@ a.link {
   position: relative;
   font-size: 2em;
   font-weight: 500;
-  overflow: ellipsis; }
+  overflow: auto; }
 
 .card-flavor {
   color: #f8f6f6;
-  font-size: 1em;
   margin: .5em 0 .25em 0; }
 
 .card-content {
@@ -177,7 +173,7 @@ a.link {
   padding: 0; }
 
 .offset-up {
-  margin: -1em 0 0 0; }
+  margin: -1.5em 0 0 0; }
 
 .center {
   text-align: center; }
@@ -186,44 +182,26 @@ a.link {
   max-height: 100%;
   max-width: 100%; }
 
-.text-block {
-  color: #f8f6f6;
-  font-size: 1.2em;
-  line-height: 2em;
-  font-weight: 100;
-  font-style: normal;
-  letter-spacing: .015em; }
-
 .anchor {
   position: relative;
   display: block;
-  top: -160px; }
+  top: 12em; }
 
 .zebra-stripe {
   background: #606060; }
 
 .social-icons {
-  height: 100px;
+  height: 4em;
   opacity: 0.8; }
 
 .icon-black {
   color: black;
   opacity: 0.8; }
 
-.mobile-brand {
-  font-family: simson;
-  font: 20px;
-  color: #d4b12b;
-  height: 20px;
-  width: 20px; }
-
 .navbar-brand-mobile {
-  max-height: 50px;
-  max-width: 50px;
-  margin: 15px 0px 0px 10px; }
-
-.shrink {
-  padding: 50px 20px; }
+  max-height: 3.5em;
+  max-width: 3.5em;
+  margin: .75em 0 0 .5em; }
 
 #map {
   height: 55vh; }
