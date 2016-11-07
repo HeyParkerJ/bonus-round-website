@@ -1,0 +1,28 @@
+.navbar-inverse {
+    background-color: $primary-color;
+}
+
+.navbar-inverse .navbar-nav > .active > a,
+.navbar-inverse .navbar-nav > .active > a:hover,
+.navbar-inverse .navbar-nav > .active > a:focus {
+    background-color: $primary-color;
+}
+
+.navbar-inverse .navbar-nav > li > a {
+    color: $br-gold;
+}
+
+.navbar-logo  {
+    max-height: 5.3em;
+}
+
+.navbar-nav > li > a {
+    display: flex;
+    align-items: center;
+    font-size: 1.4em;
+}
+
+.col-centered{
+    float: none;
+    margin: 0 auto;
+}

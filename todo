@@ -1,25 +1,22 @@
 TODO:
 
-	PRODUCTION ROADBLOCKS:
-		Cleanup CSS
+Display Menu from .txt file
+Display arcades from .txt file
+Add loading icon
 
-	FEATURES:
 
-	BUGS:
+PRODUCTION ROADBLOCKS:
 
-	WISHLIST:
-		Smoothscroll plugin
+FEATURES:
 
-		References to "Bonus Round" use simson font
-			Problem doing this is that it looks bad
-			when using default import options
+BUGS:
 
-		Carousel + Events tie in
+Navbar craps out between certain widths
 
-		Hover description for beers
 
-		Improve contrast ratio - http://leaverou.github.io/contrast-ratio/#%23d4b12b-on-%236b6b6b
+WISHLIST:
+	Smoothscroll plugin
 
-happy hour: {
-	find condensed version - took pic
-}
+	Hover description for beers
+
+	Improve contrast ratio - http://leaverou.github.io/contrast-ratio/#%23d4b12b-on-%236b6b6b

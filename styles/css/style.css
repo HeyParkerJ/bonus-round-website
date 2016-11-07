@@ -1,0 +1,221 @@
+/* http://meyerweb.com/eric/tools/css/reset/
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline; }
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block; }
+
+body {
+  line-height: 1; }
+
+ol, ul, li {
+  list-style: none; }
+
+blockquote, q {
+  quotes: none; }
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none; }
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+.navbar-inverse {
+  background-color: #3b3838; }
+
+.navbar-inverse .navbar-nav > .active > a,
+.navbar-inverse .navbar-nav > .active > a:hover,
+.navbar-inverse .navbar-nav > .active > a:focus {
+  background-color: #3b3838; }
+
+.navbar-inverse .navbar-nav > li > a {
+  color: #d4b12b; }
+
+.navbar-logo {
+  max-height: 5.3em; }
+
+.navbar-nav > li > a {
+  display: flex;
+  align-items: center;
+  font-size: 1.4em; }
+
+.col-centered {
+  float: none;
+  margin: 0 auto; }
+
+body, html {
+  font-size: 14px;
+  font-family: 'Roboto', sans-serif;
+  height: 100%;
+  background-color: #6b6b6b; }
+
+body {
+  margin: 12em 0 0 0; }
+
+.content-block {
+  padding: 1em 0 2em 0; }
+
+.font-medium {
+  font-size: 1.2em; }
+
+.text-block {
+  color: #f8f6f6;
+  line-height: 2em;
+  font-weight: 100;
+  font-style: normal;
+  letter-spacing: .015em; }
+
+.br-hero {
+  color: #d4b12b;
+  font-size: 3em;
+  text-shadow: 0 0 0 black;
+  font-weight: 600; }
+
+.link {
+  color: #d4b12b;
+  text-decoration: underline; }
+
+.gold, .menu-header, .menu-header-minor, .card-title {
+  color: #d4b12b; }
+
+.menu-header {
+  font-size: 2em;
+  margin: 1em 0;
+  font-weight: 500; }
+
+.menu-header-minor {
+  font-size: 1.5em;
+  margin: 1em 0 .25em 0; }
+
+.menu-content, .menu-content-strong {
+  color: #f8f6f6;
+  margin: 1em 0;
+  line-height: 1.5em;
+  font-weight: 100; }
+
+.menu-content-strong {
+  font-size: 1.7em;
+  line-height: 1.8em;
+  font-weight: 400; }
+
+.menu-flavor {
+  color: #f8f6f6;
+  margin: -1.5em 0 0 0; }
+
+.menu-flavor-minor {
+  color: #f8f6f6;
+  margin: -.25em 0 0 0; }
+
+.card-entire {
+  height: 27em;
+  background-color: #6b6b6b;
+  box-shadow: 0 19px 38px rgba(0, 0, 0, 0.3), 0 15px 12px rgba(0, 0, 0, 0.22);
+  margin: 2em .5em; }
+
+.card-topper {
+  background-color: #6b6b6b;
+  height: 25em; }
+
+.card-header {
+  min-height: 5em;
+  background-color: #3b3838;
+  padding: .25em;
+  border-bottom: thin solid #f8f6f6; }
+
+.card-title {
+  top: 50%;
+  position: relative;
+  font-size: 2em;
+  font-weight: 500;
+  overflow: auto; }
+
+.card-flavor {
+  color: #f8f6f6;
+  margin: .5em 0 .25em 0; }
+
+.card-content {
+  color: #f8f6f6;
+  margin: 1em 0;
+  line-height: 1.5em;
+  font-weight: 100; }
+
+.card-footer {
+  color: #d4b12b; }
+
+.nopad {
+  padding: 0; }
+
+.offset-up {
+  margin: -1.5em 0 0 0; }
+
+.center {
+  text-align: center; }
+
+.splash-image {
+  max-height: 100%;
+  max-width: 100%; }
+
+.anchor {
+  position: relative;
+  display: block;
+  top: -5.8em; }
+
+.zebra-stripe {
+  background: #606060; }
+
+.social-icons {
+  height: 4em;
+  opacity: 0.8; }
+
+.icon-black {
+  color: black;
+  opacity: 0.8; }
+
+.navbar-brand-mobile {
+  max-height: 3.5em;
+  max-width: 3.5em;
+  margin: .75em 0 0 .5em; }
+
+.map {
+  height: 55vh; }
+
+/*miller - verb first modifiers after*/
+/*Block  - element - modifier
+nav 		link 		blue */
+/*when width is > 768px these styles will apply*/
+@media (min-width: 768px) {
+  .navbar-nav .nav-link {
+    padding: 50px 20px; } }
+@media (max-width: 768px) {
+  .anchor {
+    top: -80px; }
+
+  body {
+    margin: 60px 0 0 0; } }
+
+/*# sourceMappingURL=style.css.map */

@@ -1,0 +1,195 @@
+@import 'variables';
+@import 'reset.scss';
+@import 'bootstrap-custom';
+
+body, html {
+  font-size: $font-size;
+	font-family: 'Roboto', sans-serif;
+	height: 100%;
+	background-color: $background-color;
+}
+
+body {
+  margin: 12em 0 0 0;
+}
+
+.content-block {
+	padding: 1em 0 2em 0;
+}
+
+.font-medium {
+  font-size: 1.2em;
+}
+
+.text-block{
+	color: $white;
+	line-height: 2em;
+	font-weight: 100;
+	font-style: normal;
+	letter-spacing: .015em;
+}
+
+.br-hero {
+  color: $br-gold;
+  font-size: 3em;
+  text-shadow: 0 0 0 rgba(0,0,0,1);
+  font-weight: 600;
+}
+
+.link {
+	color: $br-gold;
+	text-decoration: underline;
+}
+
+.gold {
+  color: $br-gold;
+}
+
+.menu-header {
+  @extend .gold;
+  font-size: 2em;
+	margin: 1em 0;
+	font-weight: 500;
+}
+
+.menu-header-minor {
+  @extend .gold;
+  font-size: 1.5em;
+	margin: 1em 0 .25em 0;
+}
+
+.menu-content {
+  color: $white;
+  margin: 1em 0;
+  line-height: 1.5em;
+  font-weight: 100;
+}
+
+.menu-content-strong {
+  @extend .menu-content;
+  font-size: 1.7em;
+  line-height: 1.8em;
+  font-weight: 400;
+}
+
+.menu-flavor {
+  color: $white;
+  margin: -1.5em 0 0 0;
+}
+
+.menu-flavor-minor {
+  color: $white;
+  margin: -.25em 0 0 0;
+}
+
+.card-entire {
+  height: 27em;
+  background-color: $background-color;
+  box-shadow: 0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22);
+  margin: 2em .5em;
+}
+
+.card-topper {
+  background-color: $background-color;
+  height: 25em;
+}
+
+.card-header {
+  min-height: 5em;
+  background-color: $primary-color;
+  padding: .25em;
+  border-bottom: thin solid $white;
+}
+
+.card-title {
+  @extend .gold;
+  top: 50%;
+  position: relative;
+  font-size: 2em;
+  font-weight: 500;
+  overflow: auto;
+}
+
+.card-flavor {
+  color: $white;
+  margin: .5em 0 .25em 0;
+}
+
+.card-content {
+  color: $white;
+  margin: 1em 0;
+  line-height: 1.5em;
+  font-weight: 100;
+}
+
+.card-footer {
+  color: $br-gold;
+}
+
+// HACKS
+.nopad {
+  padding: 0;
+}
+
+.offset-up{
+  margin: -1.5em 0 0 0;
+}
+
+.center {
+  text-align: center;
+}
+
+.splash-image {
+	max-height: 100%;
+	max-width: 100%;
+}
+
+.anchor {
+	position: relative;
+	display: block;
+	top: -5.8em;
+}
+
+.zebra-stripe {
+	background: $secondary-color;
+}
+
+.social-icons {
+	height: 4em;
+	opacity: 0.8;
+}
+
+.icon-black {
+	color: black;
+	opacity: 0.8;
+}
+
+.navbar-brand-mobile {
+	max-height: 3.5em;
+	max-width: 3.5em;
+	margin: .75em 0 0 .5em;
+}
+
+#map {
+	height: 55vh;
+}
+
+		/*miller - verb first modifiers after*/
+		/*Block  - element - modifier
+		nav 		link 		blue */
+		/*when width is > 768px these styles will apply*/
+@media (min-width:768px) {
+	.navbar-nav .nav-link {
+		padding: 50px 20px;
+	}
+}
+
+@media (max-width:768px) {
+	.anchor {
+		top: -80px;
+	}
+
+	body {
+		margin: 60px 0 0 0;
+	}
+}
