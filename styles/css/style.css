@@ -176,8 +176,12 @@ body {
 .center {
   text-align: center; }
 
-.loading {
-  display: block; }
+.loading-spinner {
+  position: relative;
+  margin: 2em 2em 2em 2em; }
+
+.content-hide {
+  display: none; }
 
 .splash-image {
   max-height: 100%;

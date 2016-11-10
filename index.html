@@ -15,7 +15,7 @@
 
         <!-- Font Awesome -->
         <link rel="stylesheet" href="styles/vendor/font-awesome-4.6.2/css/font-awesome.min.css">
-        <link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet" type="text/css">
     </head>
 
     <body data-spy="scroll" data-target=".navbar" data-offset="20">
@@ -122,37 +122,40 @@
 
                     <div class="menu-flavor center">Happy Hour - Every Day 4-6</div>
 
-                    <!-- DRAFT -->
-                    <h3 class="menu-header-minor center">On Draft</h3>
-                    <div id="cms_taps-lastupdated" class="center"></div>
-                    <div class="row menu-content font-medium" id="cms_taps"> </div>
+                    <div id="content_cocktails_spinner" class="loading-spinner"></div>
 
-                    <!-- BOTTLES -->
-                    <h3 class="menu-header-minor center">Cans & Bottles</h3>
-                    <div id="cms_bottles-lastupdated" class="center"></div>
-                    <div class="row menu-content font-medium" id="cms_bottles"> </div>
+                      <div class="content-hide">
+                        <!-- DRAFTS -->
+                        <h3 class="menu-header-minor center">On Draft</h3>
+                        <div id="cms_taps-lastupdated" class="center"></div>
+                        <div class="row menu-content font-medium" id="cms_taps"> </div>
 
-                    <!-- COCKTAILS -->
-                    <div class="row menu-content font-medium" id="cocktails">
-                        <h3 class="menu-header">Cocktails</h3>
-                        <ul id="content_cocktails"></ul>
-                        <div id="content_cocktails_spinner" class="loading"></div>
-                    </div>
+                        <!-- BOTTLES -->
+                        <h3 class="menu-header-minor center">Cans & Bottles</h3>
+                        <div id="cms_bottles-lastupdated" class="center"></div>
+                        <div class="row menu-content font-medium" id="cms_bottles"> </div>
 
-                    <!-- WINE -->
-                    <div class="row menu-content font-medium" >
-                      <h3 class="menu-header">Wine</h3>
-                      <div class="offset-up">
-                        <div class="col-md-6 nopad">
-                          <h4 class="menu-header-minor row">Red</h4>
-                          <div id="content_reds"></div>
+                        <!-- COCKTAILS -->
+                        <div class="row menu-content font-medium" id="cocktails">
+                            <h3 class="menu-header">Cocktails</h3>
+                            <ul id="content_cocktails"></ul>
                         </div>
-                        <div class="col-md-6 nopad">
-                          <h4 class="menu-header-minor row">White</h4>
-                          <div id="content_whites"></div>
+
+                        <!-- WINE -->
+                        <div class="row menu-content font-medium" >
+                          <h3 class="menu-header">Wine</h3>
+                          <div class="offset-up">
+                            <div class="col-md-6 nopad">
+                              <h4 class="menu-header-minor row">Red</h4>
+                              <div id="content_reds"></div>
+                            </div>
+                            <div class="col-md-6 nopad">
+                              <h4 class="menu-header-minor row">White</h4>
+                              <div id="content_whites"></div>
+                            </div>
+                          </div>
                         </div>
-                      </div>
-                    </div>
+                  </div> <!-- hide/show content -->
                 </div> <!-- .container -->
             </div> <!-- .content-block #drinks-content -->
 
