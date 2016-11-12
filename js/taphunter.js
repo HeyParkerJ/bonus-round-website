@@ -239,9 +239,11 @@ function outputColumnedList(displayObject){
 }
 
 var makeLoadedContentVisible = function() {
-  var targets = document.getElementsByClassName('content-hide');
+  var targets = document.getElementsByClassName('load-externally');
+  console.log(targets);
   for(var i = 0; i < targets.length; i++){
-    console.log(targets[i].classList.remove('content-hide'));
+    console.log(targets[i]);
+    targets[i].classList.remove('content-hide');
   }
 }
 
