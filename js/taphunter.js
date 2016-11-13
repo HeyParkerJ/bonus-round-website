@@ -73,8 +73,8 @@ function populatePage(json) {
   outputColumnedList({
     data: json.taps,
     menuType: 'cms_taps',
-    min_items_for_multicolumn: 8,
-    columnsNeeded: 4,
+    min_items_for_multisection: 8,
+    sectionsNeeded: 4,
     enableLastUpdated: true,
     outputMenu: function(data, param) {
       return 'beforeend', '<li><div<strong>'+data.beer.name+'</strong></br><small>'+" ("+data.beer.abv+"% / "+data.beer.ibu+" IBU) - "+paintThatShitGold(data.brewery.state)+'</small></li>'
@@ -83,8 +83,8 @@ function populatePage(json) {
 	outputColumnedList({
     data: json.bottles,
     menuType: 'cms_bottles',
-    min_items_for_multicolumn: 8,
-    columnsNeeded: 4,
+    min_items_for_multisection: 8,
+    sectionsNeeded: 4,
     enableLastUpdated: true,
     outputMenu: function(data, param){
       return 'beforeend', '<li><strong>'+data.beer.name+'</strong><small>'+" - "+paintThatShitGold(data.brewery.state)+'</small></li>'
@@ -93,8 +93,8 @@ function populatePage(json) {
   outputEvents({
     data: json.events,
     menuType: 'cms_events',
-    min_items_for_multicolumn: 3,
-    columnsNeeded: 3,
+    min_items_for_multisection: 3,
+    sectionsNeeded: 3,
     enableLastUpdated: false,
     outputMenu: function(data, param) {
       var description = data.description.length > 200 ? data.description.substring(0,300).concat("...") : data.description;
@@ -147,38 +147,38 @@ function outputCocktails(data) {
 }
 
 function outputEvents(displayObject) {
-  var itemList, menuType, min_items_for_multicolumn, columnsNeeded, nextItemToOutput, lastUpdated
+  var itemList, menuType, min_items_for_multisection, sectionsNeeded, nextItemToOutput, lastUpdated
 
   itemList = displayObject.data
   menuType = displayObject.menuType
-  min_items_for_multicolumn = displayObject.min_items_for_multicolumn
-  columnsNeeded = displayObject.columnsNeeded;
+  min_items_for_multisection = displayObject.min_items_for_multisection
+  rowsNeeded = displayObject.sectionsNeeded;
 	nextItemToOutput = 0;
 
-  if(itemList.length < min_items_for_multicolumn) { columnsNeeded = 1 };
+  if(itemList.length < min_items_for_multisection) { sectionsNeeded = 1 };
 
-	var itemsPerColumn = Math.floor(itemList.length / columnsNeeded);
-	var remainder = itemList.length % columnsNeeded
+	var itemsPerSection = Math.floor(itemList.length / sectionsNeeded);
+	var remainder = itemList.length % sectionsNeeded
 
-	for (var columnNumber = 0; columnNumber <= columnsNeeded && nextItemToOutput < itemList.length; columnNumber++){
-		var itemsInThisColumn = itemsPerColumn;
+	for (var rowNumber = 0; rowNumber <= sectionsNeeded && nextItemToOutput < itemList.length; rowNumber++){
+		var itemsInThisSection = itemsPerSection;
 
 		if(remainder > 0) {
-			itemsInThisColumn++
+			itemsInThisSection++
 			remainder--
 		}
 
     document.getElementById(menuType).insertAdjacentHTML('beforeend', (function(){
-      return '<div id='+menuType+'-col-'+columnNumber+' class="col-md-4"></div>'
+      return '<div id='+menuType+'-row-'+rowNumber+' class="col-md-4"></div>'
     })())
 
-    document.getElementById(menuType+'-col-'+columnNumber).insertAdjacentHTML('beforeend', (function(){
-      return 'beforeend', '<div id="'+menuType+'-div-'+columnNumber+'></div>'
+    document.getElementById(menuType+'-row-'+rowNumber).insertAdjacentHTML('beforeend', (function(){
+      return 'beforeend', '<div id="'+menuType+'-div-'+rowNumber+'></div>'
     })())
 
-    var div = document.getElementById(menuType+'-col-'+columnNumber)
+    var div = document.getElementById(menuType+'-row-'+rowNumber)
 
-		for (var j = 0; j < itemsInThisColumn && nextItemToOutput < itemList.length; j++){
+		for (var j = 0; j < itemsInThisSection && nextItemToOutput < itemList.length; j++){
       var data = itemList[nextItemToOutput]
 			div.insertAdjacentHTML('beforeend', displayObject.outputMenu(data))
 
@@ -188,25 +188,25 @@ function outputEvents(displayObject) {
 }
 
 function outputColumnedList(displayObject){
-  var itemList, menuType, min_items_for_multicolumn, columnsNeeded, nextItemToOutput, lastUpdated
+  var itemList, menuType, min_items_for_multisection, sectionsNeeded, nextItemToOutput, lastUpdated
 
   itemList = displayObject.data
   menuType = displayObject.menuType
-  min_items_for_multicolumn = displayObject.min_items_for_multicolumn
-  columnsNeeded = displayObject.columnsNeeded;
+  min_items_for_multisection = displayObject.min_items_for_multisection
+  sectionsNeeded = displayObject.sectionsNeeded;
 	nextItemToOutput = 0;
 	lastUpdated = '';
 
-	if(itemList.length < min_items_for_multicolumn) { columnsNeeded = 1 };
+	if(itemList.length < min_items_for_multisection) { sectionsNeeded = 1 };
 
-	var itemsPerColumn = Math.floor(itemList.length / columnsNeeded);
-	var remainder = itemList.length % columnsNeeded
+	var itemsPerSection = Math.floor(itemList.length / sectionsNeeded);
+	var remainder = itemList.length % sectionsNeeded
 
-	for (var columnNumber = 0; columnNumber <= columnsNeeded && nextItemToOutput < itemList.length; columnNumber++){
-		var itemsInThisColumn = itemsPerColumn;
+	for (var columnNumber = 0; columnNumber <= sectionsNeeded && nextItemToOutput < itemList.length; columnNumber++){
+		var itemsInThisSection = itemsPerSection;
 
 		if(remainder > 0) {
-			itemsInThisColumn++
+			itemsInThisSection++
 			remainder--
 		}
 
@@ -220,7 +220,7 @@ function outputColumnedList(displayObject){
 
 		var ul = document.getElementById(menuType+'-ul-'+columnNumber)
 
-		for (var j = 0; j < itemsInThisColumn && nextItemToOutput < itemList.length; j++){
+		for (var j = 0; j < itemsInThisSection && nextItemToOutput < itemList.length; j++){
       var data = itemList[nextItemToOutput]
 			ul.insertAdjacentHTML('beforeend', displayObject.outputMenu(data, nextItemToOutput))
 
